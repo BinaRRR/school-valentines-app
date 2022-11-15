@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+:root {
+    --bgcolor: rgb(245, 243, 243);
+    --main-color: red;
+    --button-color: rgba(235, 0, 0, 0.61);
+    --button-color-hovered: rgb(235, 0, 0);
+    --secondary-button-color: rgba(0, 120, 207, 0.61);
+    --secondary-button-color-hovered: rgb(0, 120, 207);
+    --other-text-color: black;
+}
+
+/*-------------------*/
+
+
+@media only screen and (max-width: 900px) {
+    .menu-element > p {
+        display: none;
+    }
+    i {
+        font-size: 2rem !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #header-left > h3 {
+        font-size: 4vmin !important;
+    }
+    #header-left > img {
+        width: 70%;
+    }
+    i {
+        font-size: 1rem !important;
+    }
+}
+
+body {
+    margin: 0;
+    background-color: var(--bgcolor);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 75px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+#header-left {
+    width: 40%;
+    margin: 0 30px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#header-left > img {
+    padding-right: 10px;
+    max-height: 50px;
+}
+
+#header-left > h3 {
+    color: var(--main-color);
+    -webkit-text-stroke: 0.5px black;
+    font-size: 3vmin;
+    margin: 0;
+}
+
+#header-right {
+    display: flex;
+    justify-content: center;
+}
+
+#home {
+    display: flex;
+    align-items: center;
+    font-size: 3vmin;
+}
+
+#home > img {
+    height: 45px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    
+}
+
+#home > .menu-element {
+    padding: 0;
+}
+
+.menu-element {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-family: 'Lato', sans-serif;
+    font-size: 2.6vmin;
+    padding: 0 20px;
+    transition: color 0.5s;
+}
+
+.menu-element:hover {
+    transition: color 0.5s;
+    color: var(--secondary-button-color-hovered);
+    cursor: pointer;
+}
+
+.menu-element > i {
+    margin-right: 5px;
+}
+
+/* ------------------------- MAIN ------------------------- */
+.main-top {
+    margin: 75px 0;
+    text-align: center;
+}
+
+.main-top > p {
+    color: var(--main-color);
+    font-family: 'Lato', sans-serif;
+    margin: 10px 0;
+    font-size: 7vmin;
+    font-weight:500;
+}
+
+.main-top > p:nth-of-type(2) {
+    color: var(--other-text-color);
+    -webkit-text-stroke: 0.5px var(--main-color);
+    font-size: 3vmin;
+}
+
+.main-buttons {
+    margin: 100px 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-buttons > * {
+    height: 100px;
+    border-radius: 25px;
+    color: var(--bgcolor);
+    font-size: 3vmin;
+    transition: background-color 1s;
+}
+
+.main-buttons > #create-valentine {
+    width: 60%;
+    margin-right: 5%;
+    background-color: var(--button-color);
+    box-shadow: -2px 4px 4px 4px var(--other-text-color);
+}
+
+.main-buttons > #show-valentines {
+    width: 40%;
+    background-color: var(--secondary-button-color);
+    box-shadow: 2px 4px 4px 4px var(--other-text-color);
+}
+
+#show-valentines:hover, #create-valentine:hover {
+    transition: background-color 1s;
+    cursor: pointer;
+}
+#show-valentines:hover {
+    background-color: var(--secondary-button-color-hovered);
+    
+}
+
+#create-valentine:hover {
+    background-color: var(--button-color-hovered);
+}
+
+#wave-line > img {
+    margin-top: 50px;
+    width: 100%;
+    height: 75px;
+}
+
+.main-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    font-family: 'Consolas';
+    text-align: center;
+    font-size: 3vmin;
+    color: var(--main-color);
+}
+
+.stats-left {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1 / span 3;
+    grid-column: 1;
+}
+
+.stats-right {
+    display: flex;
+    flex-direction: column;
+    grid-row: 4 / span 3;
+    grid-column: 2;
+}
+
+.stats-left > p:first-child, .stats-right > p:first-child {
+    margin: 0;
+    font-weight: bold;
+    font-size: 10vmin
+}
+
+.stats-left > *, .stats-right > * {
+    margin: 5px 0;
+}
+
+.main-bottom {
+    text-align: center;
+    font-family: 'Consolas';
+    margin-bottom: 100px;
+    font-size: 2.6vmin
+}

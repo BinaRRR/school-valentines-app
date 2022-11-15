@@ -1,0 +1,49 @@
+.page-container {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.loading-screen-container {
+    position: absolute;
+    height: 100vh;
+    margin: 0 15%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: opacity 0.7s;
+}
+
+.loading-bar-container {
+    margin-top: 15vmin;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 5vmin;
+}
+
+.zlota-logo-container > img {
+    width: 8vmin;
+}
+
+.loading-bar-container > img {
+    width: 40vmin;
+}
+
+.loading-bar-border {
+    border: 2px solid black;
+    height: 15px;
+    width: 100%;
+}
+
+.loading-bar {
+    transition: ease-in-out width 1s;
+    width: 0%;
+    height: 100%;
+    background-color: red;
+}
