@@ -34,18 +34,18 @@
                     <img src="img/slash.png" alt="">
                 </div>
                 <nav>
-                    <div class="menu-element">
+                    <a class="menu-element">
                         <i class="fa-solid fa-circle-plus"></i>
                         <p>Kreator walentynek</p>
-                    </div>
-                    <div class="menu-element">
+                    </a>
+                    <a class="menu-element">
                         <i class="fa-solid fa-rectangle-list"></i>
                         <p>Lista wysłanych</p>
-                    </div>
-                    <div class="menu-element">
+                    </a>
+                    <a class="menu-element" href="kontakt.html">
                         <i class="fa-solid fa-circle-info"></i>
                         <p>Kontakt</p>
-                    </div>
+                    </a>
                 </nav>
             </div>
         </header>
@@ -58,33 +58,61 @@
             </div>
 
             <div class="main-buttons">
-                <button id="create-valentine">Stwórz swoją anonimową walentynkę</button>
-                <button id="show-valentines">Przejrzyj wysłane walentynki</button>
+                <a id="create-valentine">Stwórz swoją anonimową walentynkę</a>
+                <a id="show-valentines" href="#valentines-list-goto">Przejrzyj wysłane walentynki</a>
             </div>
 
             <div id="wave-line">
                 <img src="img/wave.png" alt="">
             </div>
+<?php
+    include_once('connection.php');
 
+    // mysqli_query($db, "CREATE TABLE IF NOT EXISTS walentynki
+    // (ID INT NOT NULL auto_increment PRIMARY KEY,
+    // title VARCHAR(64) NOT NULL,
+    // firstName VARCHAR(32) NOT NULL,
+    // class char(2) NOT NULL,
+    // message TEXT NOT NULL,
+    // date DATETIME NOT NULL);");
+
+
+    // mysqli_query($db, "CREATE TABLE IF NOT EXISTS pixels
+    // (ID INT NOT NULL auto_increment PRIMARY KEY,
+    // valentineID INT NOT NULL,
+    // pixelColor char(6));");
+
+    $results = mysqli_query($db, "SELECT 
+    (SELECT COUNT(ID) FROM walentynki) AS allValentines,
+    (SELECT COUNT(ID) FROM walentynki WHERE DATE(creationDate)=DATE(NOW())) AS todaysValentines
+    FROM
+    walentynki");
+    $row = mysqli_fetch_row($results);
+
+    mysqli_close($db);
+?>
             <div class="main-stats">
                 <div class="stats-left">
                     <p>
-                        <?php #VALUE ?>17
+                        <?php echo $row[1] ?>
                     </p>
                     <p>wyznań miłosnych dzisiaj</p>
                 </div>
                 <div class="stats-right">
                     <p>
-                        <?php #VALUE ?>95
+                        <?php echo $row[0] ?>
                     </p>
                     <p>poprawionych humorów ogółem</p>
                 </div>
             </div>
-
             <div class="main-bottom">
                 <p>Czas na Twój ruch. Anonimowo wyślij komuś walentynkę, wyznaj co czujesz bądź uczyń jego dzień lepszym!</p>
+                <img src="img/arrow.png" alt="">
             </div>
+            <div id="valentines-list-goto"></div>
         </div>
     </div>
+    <div class="valentines-list"></div>
+    
 </body>
 </html>

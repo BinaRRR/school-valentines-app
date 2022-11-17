@@ -14,5 +14,4 @@ window.addEventListener('load', () => {
             }, 1000);
         }, 100);
     }, 1000);
-    
 });
