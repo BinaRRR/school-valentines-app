@@ -7,6 +7,7 @@
     <title>Złota szkoła | Walentynki</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/loading-screen.css">
+    <link rel="stylesheet" href="css/creator-style.css">
     <script src="https://kit.fontawesome.com/5834cec5b8.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -34,20 +35,26 @@
                     <img src="img/slash.png" alt="">
                 </div>
                 <nav>
-                    <div class="menu-element">
+                    <a class="menu-element">
                         <i class="fa-solid fa-circle-plus"></i>
                         <p>Kreator walentynek</p>
-                    </div>
-                    <div class="menu-element">
+                    </a>
+                    <a class="menu-element">
                         <i class="fa-solid fa-rectangle-list"></i>
                         <p>Lista wysłanych</p>
-                    </div>
-                    <div class="menu-element">
+                    </a>
+                    <a class="menu-element" href="kontakt.html">
                         <i class="fa-solid fa-circle-info"></i>
                         <p>Kontakt</p>
-                    </div>
+                    </a>
                 </nav>
             </div>
         </header>
+
+        
+
+
+
+
     </div>
 </body>

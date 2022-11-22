@@ -34,7 +34,7 @@
                     <img src="img/slash.png" alt="">
                 </div>
                 <nav>
-                    <a class="menu-element">
+                    <a class="menu-element" href="choose.php">
                         <i class="fa-solid fa-circle-plus"></i>
                         <p>Kreator walentynek</p>
                     </a>
@@ -58,7 +58,7 @@
             </div>
 
             <div class="main-buttons">
-                <a id="create-valentine">Stwórz swoją anonimową walentynkę</a>
+                <a id="create-valentine" href="choose.php">Stwórz swoją anonimową walentynkę</a>
                 <a id="show-valentines" href="#valentines-list-goto">Przejrzyj wysłane walentynki</a>
             </div>
 
@@ -111,8 +111,39 @@
             </div>
             <div id="valentines-list-goto"></div>
         </div>
+        <h1 class="valentines-category-title">Ostatnie miłostki</h1>
+        <div class="valentines-list">
+            <div class="valentine-element featured">
+                <div class="valentine-receiver">Liliana Troczyńska 3B</div>
+                <div class="valentine-title">Zaproszenie na rajd rowerowy informatyka</div>
+                <div class="valentine-date">Dzisiaj, 17:25</div>
+            </div>
+            <hr>
+            <div class="valentine-element">
+                <div class="valentine-receiver">Liliana Troczyńska 3B</div>
+                <div class="valentine-title">Zaproszenie na rajd rowerowy informatyka</div>
+                <div class="valentine-date">Dzisiaj, 17:25</div>
+            </div>
+            <hr>
+            <div class="valentine-element">
+                <div class="valentine-receiver">Liliana Troczyńska 3B</div>
+                <div class="valentine-title">Zaproszenie na rajd rowerowy informatyka</div>
+                <div class="valentine-date">Dzisiaj, 17:25</div>
+            </div>
+            <hr>
+            <div class="valentine-element">
+                <div class="valentine-receiver">Liliana Troczyńska 3B</div>
+                <div class="valentine-title">Zaproszenie na rajd rowerowy informatyka</div>
+                <div class="valentine-date">Dzisiaj, 17:25</div>
+            </div>
+            <hr>
+            <div class="valentine-element">
+                <div class="valentine-receiver">Lfafafafafafa Troczyńska 3B</div>
+                <div class="valentine-title">Zaproszenie na rajd rowerowy informatyka</div>
+                <div class="valentine-date">Dzisiaj, 17:25</div>
+            </div>
+            <hr>
+        </div>
     </div>
-    <div class="valentines-list"></div>
-    
 </body>
 </html>
