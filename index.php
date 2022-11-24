@@ -59,7 +59,7 @@
 
             <div class="main-buttons">
                 <a id="create-valentine" href="choose.php">Stwórz swoją anonimową walentynkę</a>
-                <a id="show-valentines" href="#valentines-list-goto">Przejrzyj wysłane walentynki</a>
+                <a id="show-valentines" href="#valentines-category-title">Przejrzyj wysłane walentynki</a>
             </div>
 
             <div id="wave-line">
@@ -109,40 +109,104 @@
                 <p>Czas na Twój ruch. Anonimowo wyślij komuś walentynkę, wyznaj co czujesz bądź uczyń jego dzień lepszym!</p>
                 <img src="img/arrow.png" alt="">
             </div>
-            <div id="valentines-list-goto"></div>
         </div>
-        <h1 class="valentines-category-title">Ostatnie miłostki</h1>
+        <h1 id="valentines-category-title">Najnowsze miłostki</h1>
         <div class="valentines-list">
-            <div class="valentine-element featured">
-                <div class="valentine-receiver">Liliana Troczyńska 3B</div>
-                <div class="valentine-title">Zaproszenie na rajd rowerowy informatyka</div>
-                <div class="valentine-date">Dzisiaj, 17:25</div>
+            <div class="valentine-card featured">
+                <div class="valentine-receiver">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Liliana Troczyńska 3B</p>
+                </div>
+                <div class="valentine-card-right">
+                    <div class="valentine-info">
+                        <div class="valentine-date">Dzisiaj, 17:25</div>
+                        <div class="valentine-title">
+                            Zaproszenie na rajd rowerowy informatyka
+                        </div>
+                    </div>
+                    <div class="valentine-type-info">
+                        <p class="v-type-text"><i class="fa-regular fa-keyboard"></i> Tekst</p>
+                        <p class="v-type-pixelart"><i class="fa-solid fa-paint-roller"></i> Pixel art</p>
+                        <p class="v-type-image"></p>
+                    </div>
+                </div>
             </div>
-            <hr>
-            <div class="valentine-element">
-                <div class="valentine-receiver">Liliana Troczyńska 3B</div>
-                <div class="valentine-title">Zaproszenie na rajd rowerowy informatyka</div>
-                <div class="valentine-date">Dzisiaj, 17:25</div>
+            <div class="valentine-card">
+                <div class="valentine-receiver">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Hubert Kubicki 3B</p>
+                </div>
+                <div class="valentine-card-right">
+                    <div class="valentine-info">
+                        <div class="valentine-date">Dzisiaj, 03:37</div>
+                        <div class="valentine-title">
+                            Moja ballada do Ciebie, Hubercie! kc
+                        </div>
+                    </div>
+                    <div class="valentine-type-info">
+                        <p class="v-type-text"><i class="fa-regular fa-keyboard"></i> Tekst</p>
+                        <p class="v-type-pixelart"></p>
+                        <p class="v-type-image"><i class="fa-regular fa-file"></i> Plik</p>
+                    </div>
+                </div>
             </div>
-            <hr>
-            <div class="valentine-element">
-                <div class="valentine-receiver">Liliana Troczyńska 3B</div>
-                <div class="valentine-title">Zaproszenie na rajd rowerowy informatyka</div>
-                <div class="valentine-date">Dzisiaj, 17:25</div>
+            <div class="valentine-card">
+                <div class="valentine-receiver">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Hubert Kubicki 3B</p>
+                </div>
+                <div class="valentine-card-right">
+                    <div class="valentine-info">
+                        <div class="valentine-date">Wczoraj, 21:58</div>
+                        <div class="valentine-title">
+                            Moja ballada do Ciebie, Hubercie! kc
+                        </div>
+                    </div>
+                    <div class="valentine-type-info">
+                        <p class="v-type-text"><i class="fa-regular fa-keyboard"></i> Tekst</p>
+                        <p class="v-type-pixelart"></p>
+                        <p class="v-type-image"><i class="fa-regular fa-file"></i> Plik</p>
+                    </div>
+                </div>
             </div>
-            <hr>
-            <div class="valentine-element">
-                <div class="valentine-receiver">Liliana Troczyńska 3B</div>
-                <div class="valentine-title">Zaproszenie na rajd rowerowy informatyka</div>
-                <div class="valentine-date">Dzisiaj, 17:25</div>
+            <div class="valentine-card">
+                <div class="valentine-receiver">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Hubert Kubicki 3B</p>
+                </div>
+                <div class="valentine-card-right">
+                    <div class="valentine-info">
+                        <div class="valentine-date">Przedwczoraj, 14:05</div>
+                        <div class="valentine-title">
+                            Moja ballada do Ciebie, Hubercie! kc
+                        </div>
+                    </div>
+                    <div class="valentine-type-info">
+                        <p class="v-type-text"><i class="fa-regular fa-keyboard"></i> Tekst</p>
+                        <p class="v-type-pixelart"></p>
+                        <p class="v-type-image"><i class="fa-regular fa-file"></i> Plik</p>
+                    </div>
+                </div>
             </div>
-            <hr>
-            <div class="valentine-element">
-                <div class="valentine-receiver">Lfafafafafafa Troczyńska 3B</div>
-                <div class="valentine-title">Zaproszenie na rajd rowerowy informatyka</div>
-                <div class="valentine-date">Dzisiaj, 17:25</div>
+            <div class="valentine-card">
+                <div class="valentine-receiver">
+                    <i class="fa-regular fa-user"></i>
+                    <p>Hubert Kubicki 3B</p>
+                </div>
+                <div class="valentine-card-right">
+                    <div class="valentine-info">
+                        <div class="valentine-date">Przedwczoraj, 14:02</div>
+                        <div class="valentine-title">
+                            Moja ballada do Ciebie, Hubercie! kc
+                        </div>
+                    </div>
+                    <div class="valentine-type-info">
+                        <p class="v-type-text"><i class="fa-regular fa-keyboard"></i> Tekst</p>
+                        <p class="v-type-pixelart"></p>
+                        <p class="v-type-image"><i class="fa-regular fa-file"></i> Plik</p>
+                    </div>
+                </div>
             </div>
-            <hr>
         </div>
     </div>
 </body>
