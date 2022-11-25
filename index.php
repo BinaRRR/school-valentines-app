@@ -58,8 +58,8 @@
             </div>
 
             <div class="main-buttons">
-                <a id="create-valentine" href="choose.php">Stwórz swoją anonimową walentynkę</a>
-                <a id="show-valentines" href="#valentines-category-title">Przejrzyj wysłane walentynki</a>
+                <a class="create-valentine" href="choose.php">Stwórz swoją anonimową walentynkę</a>
+                <a class="show-valentines" href="#valentines-category-title">Przejrzyj wysłane walentynki</a>
             </div>
 
             <div id="wave-line">
@@ -121,7 +121,7 @@
                     <div class="valentine-info">
                         <div class="valentine-date">Dzisiaj, 17:25</div>
                         <div class="valentine-title">
-                            Zaproszenie na rajd rowerowy informatyka
+                            Lorem ipsum dolor sit amet consectetur.
                         </div>
                     </div>
                     <div class="valentine-type-info">
@@ -140,7 +140,7 @@
                     <div class="valentine-info">
                         <div class="valentine-date">Dzisiaj, 03:37</div>
                         <div class="valentine-title">
-                            Moja ballada do Ciebie, Hubercie! kc
+                            Lorem ipsum dolor sit amet consectetur.
                         </div>
                     </div>
                     <div class="valentine-type-info">
@@ -159,7 +159,7 @@
                     <div class="valentine-info">
                         <div class="valentine-date">Wczoraj, 21:58</div>
                         <div class="valentine-title">
-                            Moja ballada do Ciebie, Hubercie! kc
+                            Lorem ipsum dolor sit amet consectetur.
                         </div>
                     </div>
                     <div class="valentine-type-info">
@@ -178,7 +178,7 @@
                     <div class="valentine-info">
                         <div class="valentine-date">Przedwczoraj, 14:05</div>
                         <div class="valentine-title">
-                            Moja ballada do Ciebie, Hubercie! kc
+                            Lorem ipsum dolor sit amet consectetur.
                         </div>
                     </div>
                     <div class="valentine-type-info">
@@ -197,7 +197,7 @@
                     <div class="valentine-info">
                         <div class="valentine-date">Przedwczoraj, 14:02</div>
                         <div class="valentine-title">
-                            Moja ballada do Ciebie, Hubercie! kc
+                            Lorem ipsum dolor sit amet consectetur.
                         </div>
                     </div>
                     <div class="valentine-type-info">
@@ -207,6 +207,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="show-all-button-container">
+            <a href="" class="show-valentines" id="show-all-button">Przeglądaj wszystkie</a>
         </div>
     </div>
 </body>

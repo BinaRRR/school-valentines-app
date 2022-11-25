@@ -37,6 +37,7 @@
     justify-content: center;
     flex-direction: column;
     padding: 1em 1em;
+    width: 20%;
     border-radius: 15px 0 0 15px;
     background-color: var(--button-color);
     color: var(--bgcolor);

@@ -52,17 +52,17 @@
         </header>
 
         <div class="main-chooser">
-            <div class="pixelart-choose">
+            <a class="pixelart-choose" href="create.php">
                 <h1>Pixel art</h1>
                 <p>Bez wysiłku stwórz ładny obrazek w naszym kreatorze</p>
                 <img src="img/pixelart.png" alt="">
-            </div>
+            </a>
             <div class="line-divider"></div>
-            <div class="upload-choose">
-                <img src="img/upload.png" alt="">
+            <a class="upload-choose">
+                <img src="img/upload.png" alt="" href="create.php?upload">
                 <h1>Własne dzieło sztuki</h1>
                 <p>Prześlij swój własny kawałek twórczości</p>
-            </div>
+            </a>
         </div>
 
 

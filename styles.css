@@ -111,6 +111,7 @@ nav {
     padding: 0 20px;
     transition: color 0.5s;
     text-decoration: none;
+    color: var(--other-text-color);
 }
 
 .menu-element:visited {
@@ -155,7 +156,7 @@ nav {
     font-family: 'Lato', sans-serif;
 }
 
-.main-buttons > * {
+.create-valentine, .show-valentines {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,29 +169,40 @@ nav {
     transition: background-color 1s;
 }
 
-.main-buttons > #create-valentine {
+#show-all-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 1.5em 0 1.5em 0;
+}
+
+#show-all-button {
+    width: 30%;
+    height: 40px;
+}
+
+.create-valentine {
     width: 60%;
     margin-right: 5%;
     background-color: var(--button-color);
     box-shadow: -2px 4px 4px 4px var(--other-text-color);
 }
 
-.main-buttons > #show-valentines {
+.show-valentines {
     width: 40%;
     background-color: var(--secondary-button-color);
     box-shadow: 2px 4px 4px 4px var(--other-text-color);
 }
 
-#show-valentines:hover, #create-valentine:hover {
+.show-valentines:hover, .create-valentine:hover {
     transition: background-color 1s;
     cursor: pointer;
 }
-#show-valentines:hover {
+.show-valentines:hover {
     background-color: var(--secondary-button-color-hovered);
     
 }
 
-#create-valentine:hover {
+.create-valentine:hover {
     background-color: var(--button-color-hovered);
 }
 
