@@ -1,6 +1,7 @@
 #valentines-category-title {
     font-size: 7vmin;
-    color: var(--secondary-button-color);
+    color: var(--main-color);
+    font-family: 'Lato', sans-serif;
     text-align: center;
 }
 
@@ -15,9 +16,6 @@
     margin-top: 3vmin;
     display: flex;
     flex-direction: row;
-    text-align: center;
-    justify-content: center;
-    align-items: stretch;
     font-size: 3vmin;
     border-radius: 0 15px 15px 0;
 }
@@ -28,7 +26,15 @@
     padding: 1em;
     width: 75%;
     background-color: var(--card-bg-color);
-    border-radius: 0 15px 15px 0;
+    background-image: url('../img/card-bg-noalpha-1.png');
+    background-repeat: repeat-x;
+    background-size:contain;
+    background-position:center;
+    border-radius: 0 25px 25px 0;
+}
+
+.valentine-info {
+    height: 80%;
 }
 
 .valentine-receiver {
@@ -38,10 +44,10 @@
     flex-direction: column;
     padding: 1em 1em;
     width: 20%;
-    border-radius: 15px 0 0 15px;
+    border-radius: 25px 0 0 25px;
     background-color: var(--button-color);
+    background: linear-gradient(90deg, var(--button-color) 0%, var(--card-bg-color) 100%);
     color: var(--bgcolor);
-    /* border-right: 5px dashed var(--card-bg-color); */
 }
 
 .valentine-receiver > i {
@@ -52,6 +58,7 @@
     text-transform: uppercase;
     letter-spacing: 0.3em;
     width: 100%;
+    height: 20%;
     text-align: right;
     color: #00ffdd;
     font-size: 2vmin;
@@ -59,14 +66,18 @@
 }
 
 .valentine-title {
-    padding: 1em 0 0 1em;
+    /* padding: 1em 0 1em 0; */
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     color: var(--bgcolor);
 }
 
 .valentine-type-info {
     width: 100%;
-    height: 100%;
+    height: 20%;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -74,7 +85,7 @@
     color: var(--button-color-hovered);
     letter-spacing: .15em;
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: 2vmin;
 }
 
 .valentine-type-info > p {

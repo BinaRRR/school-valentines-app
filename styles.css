@@ -22,7 +22,7 @@ html {
     .menu-element > p {
         display: none;
     }
-    i {
+    header > i {
         font-size: 2rem !important;
     }
 }
@@ -34,7 +34,7 @@ html {
     #header-left > img {
         width: 70%;
     }
-    i {
+    header > i {
         font-size: 1rem !important;
     }
 }
