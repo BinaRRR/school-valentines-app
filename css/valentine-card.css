@@ -45,13 +45,13 @@
     padding: 1em 1em;
     width: 20%;
     border-radius: 25px 0 0 25px;
-    background-color: var(--button-color);
-    background: linear-gradient(90deg, var(--button-color) 0%, var(--card-bg-color) 100%);
+    background-color: var(--main-color);
+    background: linear-gradient(90deg, var(--main-color) 0%, var(--card-bg-color) 100%);
     color: var(--bgcolor);
 }
 
 .valentine-receiver > i {
-    font-size: 3rem;
+    font-size: 6vmin;
 }
 
 .valentine-date {
@@ -82,7 +82,7 @@
     align-items: flex-end;
     justify-content: space-between;
     /* padding: .5em 0 .5em 0; */
-    color: var(--button-color-hovered);
+    color: var(--main-color-darker);
     letter-spacing: .15em;
     text-transform: uppercase;
     font-size: 2vmin;

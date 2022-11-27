@@ -1,0 +1,99 @@
+.btn-circle {
+    background-color: var(--main-color); 
+    width: 8vmin;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.btn-circle > i {
+    font-size: 4vmin;
+    color: white;
+}
+
+.btn-clear-pixels {
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 40vmin;
+    height: 8vmin;
+    border: none;
+    border-radius: 5vmin;
+    font-size: 3vmin;
+    font-family: 'Lato', sans-serif;
+    color: #f5f9ff;
+}
+
+.hide-on-resize {
+
+}
+
+.btn-clear-pixels-right-circle > i {
+    font-size: 4vmin;
+}
+
+.btn-clear-pixels-left-circle {
+    width: 30vmin;
+}
+.btn-clear-pixels-right-circle {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+    background-color: var(--secondary-color-darker);
+    height: 8vmin;
+    aspect-ratio: 1;
+    border-radius: 5vmin;
+    overflow: hidden;
+}
+
+.red {
+    background-color: var(--main-color);
+}
+
+.red-darker {
+    background-color: var(--main-color-darker);
+}
+
+.outline {
+    outline: 3px solid red;
+    background-color: transparent;
+    color: var(--main-color);
+}
+
+@media only screen and (max-width: 700px) {
+    .btn-clear-pixels.hide-on-resize {
+        background-color: transparent;
+    }
+
+    .btn-clear-pixels-right-circle.hide-on-resize {
+        position: initial;
+    }
+
+    .btn-clear-pixels-left-circle.hide-on-resize {
+        display: none;
+    }
+}
+
+.btn-color-picker {
+    height: 5vmin;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 4px solid var(--other-text-color);
+}
+
+input[type="color"] {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    margin-left: -.7vmin;
+    margin-top: -1.7vmin;
+    height: 9vmin;
+    width: 7vmin;
+}

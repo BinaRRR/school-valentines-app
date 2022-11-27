@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Złota szkoła | Walentynki</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="css/loading-screen.css">
+    <!-- <link rel="stylesheet" href="css/loading-screen.css"> -->
     <script src="https://kit.fontawesome.com/5834cec5b8.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -50,7 +50,7 @@
             </div>
         </header>
 
-        <div id="main-container">
+        <div class="main-container">
             <div class="main-top">
                 <img src="img/zlota-logo.png" alt="Logo szkoły">
                 <p>Podziel się z kimś miłością</p>
@@ -58,8 +58,8 @@
             </div>
 
             <div class="main-buttons">
-                <a class="create-valentine" href="choose.php">Stwórz swoją anonimową walentynkę</a>
-                <a class="show-valentines" href="#valentines-category-title">Przejrzyj wysłane walentynki</a>
+                <a class="primary-button" href="choose.php">Stwórz swoją anonimową walentynkę</a>
+                <a class="secondary-button" href="#valentines-category-title">Przejrzyj wysłane walentynki</a>
             </div>
 
             <div id="wave-line">
@@ -72,9 +72,10 @@
     // (ID INT NOT NULL auto_increment PRIMARY KEY,
     // title VARCHAR(64) NOT NULL,
     // firstName VARCHAR(32) NOT NULL,
+    // lastName VARCHAR(64) NOT NULL,
     // class char(2) NOT NULL,
-    // message TEXT NOT NULL,
-    // date DATETIME NOT NULL);");
+    // message TEXT,
+    // creationDate DATETIME NOT NULL);");
 
 
     // mysqli_query($db, "CREATE TABLE IF NOT EXISTS pixels
@@ -209,7 +210,7 @@
             </div>
         </div>
         <div id="show-all-button-container">
-            <a href="" class="show-valentines" id="show-all-button">Przeglądaj wszystkie</a>
+            <a href="" class="secondary-button thicker-btn">Przeglądaj wszystkie</a>
         </div>
     </div>
 </body>

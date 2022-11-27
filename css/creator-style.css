@@ -63,3 +63,50 @@
     height: 100vh;
     background-color: #9B0000;
 }
+
+.pixelart-top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.pixelart-top-bar-right {
+    display: flex;
+    flex-direction: row;
+    gap: 75px;
+    align-items: center;
+}
+
+.color-picker-container > label > i {
+    font-size: 3vmin;
+}
+
+.color-picker-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pixelart-section {
+    margin: 0 3%;
+}
+
+.pixelart-grid-container {
+    display: grid;
+    place-items: center;
+    overflow-x: scroll;
+}
+
+.pixelart-grid {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    padding: 20px;
+    width: 100%;
+}
+
+.tile {
+    aspect-ratio: 1;
+    background-color: aquamarine;
+    border: 1px solid black;    
+}

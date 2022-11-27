@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
 @import url('css/valentine-card.css');
+@import url('css/buttons.css');
+
 :root {
     --bgcolor: rgb(245, 243, 243);
     --main-color: red;
-    --button-color: rgba(235, 0, 0, 0.61);
-    --button-color-hovered: rgb(235, 0, 0);
-    --secondary-button-color: rgba(0, 120, 207, 0.61);
-    --secondary-button-color-hovered: rgb(0, 120, 207);
+    --main-color-darker: #ca0000;
+    --secondary-color: #275efe;
+    --secondary-color-darker: #184fee;
     --other-text-color: black;
     --card-bg-color: #333333;
+}
+
+body {
+    font-family: 'Lato';
 }
 
 html {
@@ -22,8 +27,8 @@ html {
     .menu-element > p {
         display: none;
     }
-    header > i {
-        font-size: 2rem !important;
+    nav > a {
+        font-size: 1.5rem !important;
     }
 }
 
@@ -34,7 +39,7 @@ html {
     #header-left > img {
         width: 70%;
     }
-    header > i {
+    nav > a {
         font-size: 1rem !important;
     }
 }
@@ -45,12 +50,13 @@ body {
 }
 
 header {
+    z-index: 10;
     position: sticky;
     top: 0;
     background-color: var(--bgcolor);
     display: flex;
     justify-content: space-between;
-    max-height: 75px;
+    /* max-height: 75px; */
     width: 100%;
     border-bottom: 1px solid black;
 }
@@ -156,7 +162,7 @@ nav {
     font-family: 'Lato', sans-serif;
 }
 
-.create-valentine, .show-valentines {
+.primary-button, .secondary-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,35 +181,36 @@ nav {
     padding: 1.5em 0 1.5em 0;
 }
 
-#show-all-button {
+.thicker-btn {
     width: 30%;
     height: 40px;
+    font-size: 2vmin;
 }
 
-.create-valentine {
+.primary-button {
     width: 60%;
     margin-right: 5%;
-    background-color: var(--button-color);
+    background-color: var(--main-color);
     box-shadow: -2px 4px 4px 4px var(--other-text-color);
 }
 
-.show-valentines {
+.secondary-button {
     width: 40%;
-    background-color: var(--secondary-button-color);
+    background-color: var(--secondary-color);
     box-shadow: 2px 4px 4px 4px var(--other-text-color);
 }
 
-.show-valentines:hover, .create-valentine:hover {
+.secondary-button:hover, .primary-button:hover {
     transition: background-color 1s;
     cursor: pointer;
 }
-.show-valentines:hover {
-    background-color: var(--secondary-button-color-hovered);
+.secondary-button:hover {
+    background-color: var(--secondary-color-darker);
     
 }
 
-.create-valentine:hover {
-    background-color: var(--button-color-hovered);
+.primary-button:hover {
+    background-color: var(--main-color-darker);
 }
 
 #wave-line > img {
