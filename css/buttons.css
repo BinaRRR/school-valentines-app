@@ -28,10 +28,6 @@
     color: #f5f9ff;
 }
 
-.hide-on-resize {
-
-}
-
 .btn-clear-pixels-right-circle > i {
     font-size: 4vmin;
 }
@@ -85,7 +81,7 @@
     aspect-ratio: 1;
     overflow: hidden;
     border-radius: 50%;
-    border: 4px solid var(--other-text-color);
+    border: 4px solid var(--bgcolor);
 }
 
 input[type="color"] {

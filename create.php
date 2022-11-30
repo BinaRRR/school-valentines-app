@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Złota szkoła | Walentynki</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- <link rel="stylesheet" href="css/loading-screen.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/creator-style.css">
     <script src="https://kit.fontawesome.com/5834cec5b8.js" crossorigin="anonymous"></script>
+    <script src="js/submit-form.js"></script>
 </head>
 <body>
     <!-- <div class="loading-screen-container">
@@ -51,31 +52,51 @@
             </div>
         </header>
         <div class="text-section">
-            <form action="send_valentine.php" method="POST">
-                <label for="receiver">Do kogo zaadresowana jest walentynka?</label>
-                <input type="text" name="receiver" id="receiver" required>
-                <label for="grade">Klasa</label>
-                <select name="grade" id="grade" required>
-                    <option value="1A"></option>
-                    <option value="2A"></option>
-                    <option value="3A"></option>
-                    <option value="4A"></option>
-                    <option value="5A"></option>
-                    <option value="1B"></option>
-                    <option value="2B"></option>
-                    <option value="3B"></option>
-                    <option value="4B"></option>
-                    <option value="5B"></option>
-                    <option value="1C"></option>
-                    <option value="2C"></option>
-                    <option value="3C"></option>
-                    <option value="4C"></option>
-                    <option value="5C"></option>
-                </select>
-                <label for="title">Tytuł walentynki</label>
-                <input type="text" name="title" id="title" required>
-                <label for="content">Najgorętsze życzenia</label>
-                <textarea name="content" id="content" cols="30" rows="10"></textarea>
+            <form id="form" method="POST">
+                <div class="text-section-grid">
+                    <div class="grid-item item1">
+                        <label class="input-container">
+                            <input type="text" name="receiver" id="receiver" placeholder=" " required maxlength=60>
+                            <span class="input-label">Do kogo zaadresowana jest walentynka?</span>
+                        </label>
+                    </div>
+                    <div class="grid-item item2">
+                        <label class="input-container">
+                            <select name="grade" id="grade" required >
+                                <option value="" disabled selected hidden>
+                                <option value="1A"></option>
+                                <option value="2A"></option>
+                                <option value="3A"></option>
+                                <option value="4A"></option>
+                                <option value="5A"></option>
+                                <option value="1B"></option>
+                                <option value="2B"></option>
+                                <option value="3B">3B</option>
+                                <option value="4B"></option>
+                                <option value="5B"></option>
+                                <option value="1C"></option>
+                                <option value="2C"></option>
+                                <option value="3C"></option>
+                                <option value="4C"></option>
+                                <option value="5C"></option>
+                                <option value="4E">4E</option>
+                            </select>
+                            <span class="input-label">Klasa</span>
+                        </label>
+                    </div>
+                    <div class="grid-item item3">
+                        <label class="input-container">
+                            <input type="text" name="title" id="title" placeholder=" " required maxlength=60>
+                            <span class="input-label">Tytuł walentynki</span>
+                        </label>
+                    </div>
+                    <div class="grid-item item4">
+                        <label class="input-container">
+                            <textarea name="content" id="content" cols="30" rows="10" placeholder=" "></textarea>
+                            <span class="input-label">Najgorętsze życzenia</span>
+                        </label>
+                    </div>
+                </div>
         </div>
         <div class="pixelart-section">
             <div class="pixelart-top-bar">
@@ -95,7 +116,7 @@
                     <div class="color-picker-container">
                         <label for="color"><i class="fa-solid fa-paint-roller"></i></label>
                         <div class="btn-color-picker">
-                           <input type="color" name="color" id="">
+                           <input type="color" name="color" id="color-picker">
                         </div>
                     </div>
                 </div>
@@ -110,6 +131,7 @@
 
         <div class="upload-section">
         </div>
+        <input type="submit" value="Wyślij (test)">
         </form>
     </div>
 </body>

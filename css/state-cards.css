@@ -1,0 +1,34 @@
+:root {
+    --success-color: #059100;
+    --in-progress-color: #009dff;
+    --failure-color: #bd0202;
+}
+
+.state-card {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    min-width: 15vmin;
+    min-height: 10vmin;
+}
+
+.state-card-left {
+    width: 20%;
+}
+
+.success {
+    background-color: var(--success-color);
+}
+
+.in-progress {
+    background-color: var(--in-progress-color);
+}
+
+.failure {
+    background-color: var(--failure-color);
+}
