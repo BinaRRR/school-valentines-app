@@ -44,6 +44,7 @@ function colorChanged(e) {
 }
 
 function clearCanvas() {
+    const tiles = document.querySelectorAll('.tile');
     tiles.forEach(tile => {
         tile.style.background = defaultColor;
         console.log(tile);

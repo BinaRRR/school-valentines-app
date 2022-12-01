@@ -6,6 +6,7 @@ $vGrade = $_POST['grade'];
 $vTitle = $_POST['title'];
 $vContent = $_POST['content'];
 $vReceiver = explode(' ', $vReceiver);
+$file = $_FILES['userImage']['name'];
 
 include_once('connection.php');
 
@@ -24,5 +25,12 @@ foreach ($pixelColors as $tile) {
     $query->execute();
 }
 $db->close();
+
+$location = "user-images/u".$insertedRecordID.'_'.$file;
+if (move_uploaded_file($_FILES['userImage']['tmp_name'], $location)) {
+    echo "Success";
+} else {
+    echo "Failed";
+}
 
 ?>

@@ -51,8 +51,9 @@
                 </nav>
             </div>
         </header>
+        <p class="section-headline">1. Część tekstowa</p>
         <div class="text-section">
-            <form id="form" method="POST">
+            <form id="form">
                 <div class="text-section-grid">
                     <div class="grid-item item1">
                         <label class="input-container">
@@ -92,12 +93,13 @@
                     </div>
                     <div class="grid-item item4">
                         <label class="input-container">
-                            <textarea name="content" id="content" cols="30" rows="10" placeholder=" "></textarea>
+                            <textarea name="content" id="content" cols="30" rows="15" placeholder=" "></textarea>
                             <span class="input-label">Najgorętsze życzenia</span>
                         </label>
                     </div>
                 </div>
         </div>
+        <p class="section-headline">2. Kreator pixel artów</p>
         <div class="pixelart-section">
             <div class="pixelart-top-bar">
                 <button type="button" class="btn-clear-pixels hide-on-resize">
@@ -116,7 +118,7 @@
                     <div class="color-picker-container">
                         <label for="color"><i class="fa-solid fa-paint-roller"></i></label>
                         <div class="btn-color-picker">
-                           <input type="color" name="color" id="color-picker">
+                           <input type="color" value="#000000" name="color" id="color-picker">
                         </div>
                     </div>
                 </div>
@@ -129,9 +131,45 @@
             </div>
         </div>
 
-        <div class="upload-section">
+        <p class="section-headline">3. Przesyłanie pliku</p>
+        <div class="file-section">
+            <div class="file-drop-zone">
+                <p id="file-drop-zone-p">Przeciągnij i upuść plik, który chcesz dodać do walentynki</p>
+            </div>
+            <p>...lub prześlij plik</p>
+                <input type="file" id="fileUpload" accept="image/png, image/jpeg">
         </div>
-        <input type="submit" value="Wyślij (test)">
+        <div class="form-controls-section">
+            <div class="controls-left">
+                <button type="submit" class="btn-clear-pixels red">
+                    <div class="btn-clear-pixels-left-circle">Wyślij walentynkę</div>
+                    <div class="btn-clear-pixels-right-circle red-darker">
+                        <i class="fa-regular fa-paper-plane"></i>
+                    </div>
+                </button>
+                <p>Anonimowo wysyła walentynkę w świat. Będzie ona dostępna dla każdego, bez Twojego śladu.</p>
+            </div>
+            <div class="controls-right">
+            <button type="reset" class="btn-clear-pixels">
+                    <div class="btn-clear-pixels-left-circle">Zresetuj formularz</div>
+                    <div class="btn-clear-pixels-right-circle">
+                        <i class="fa-solid fa-delete-left"></i>
+                    </div>
+            </button>
+            <p>Uwaga! Wyczyści to sekcje tesktową i przesłany plik (nie będzie miało wpływu na kreator pixel artów).</p>
+            </div>
         </form>
+    </div>
+    <div class="state-card success">
+        <div class="state-card-left"><i class="fa-solid fa-check"></i></div>
+        <div class="state-card-right">Walentynka została przesłana!</div>
+    </div>
+    <!-- <div class="state-card in-progress">
+        <div class="state-card-left"><i class="fa-solid fa-spinner"></i></div>
+        <div class="state-card-right">Trwa przesyłanie walentynki...</div>
+    </div>
+    <div class="state-card failure">
+        <div class="state-card-left"><i class="fa-solid fa-xmark"></i></div>
+        <div class="state-card-right">Wystąpił błąd, spróbuj ponownie później</div> -->
     </div>
 </body>
