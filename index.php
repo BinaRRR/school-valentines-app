@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Złota szkoła | Walentynki</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- <link rel="stylesheet" href="css/loading-screen.css"> -->
+    <link rel="stylesheet" href="css/loading-screen.css">
     <script src="https://kit.fontawesome.com/5834cec5b8.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -89,8 +89,6 @@
     FROM
     walentynki");
     $row = mysqli_fetch_row($results);
-
-    mysqli_close($db);
 ?>
             <div class="main-stats">
                 <div class="stats-left">
@@ -113,16 +111,25 @@
         </div>
         <h1 id="valentines-category-title">Najnowsze miłostki</h1>
         <div class="valentines-list">
+
+        <?php
+            $results = $db->query("SELECT title, firstName, lastName, class, creationDate FROM walentynki ORDER BY creationDate DESC LIMIT 5;");
+            while ($row = $results->fetch_assoc()) {
+        ?>
             <div class="valentine-card featured">
                 <div class="valentine-receiver">
                     <i class="fa-regular fa-user"></i>
-                    <p>Liliana Troczyńska 3B</p>
+                    <p>
+                        <?php echo $row['firstName'].' '.$row['lastName'].' '.$row['class']; ?>
+                    </p>
                 </div>
                 <div class="valentine-card-right">
                     <div class="valentine-info">
-                        <div class="valentine-date">Dzisiaj, 17:25</div>
+                        <div class="valentine-date">
+                            <?php echo $row['creationDate']; ?>
+                        </div>
                         <div class="valentine-title">
-                            Lorem ipsum dolor sit amet consectetur.
+                            <?php echo $row['title']; ?>
                         </div>
                     </div>
                     <div class="valentine-type-info">
@@ -132,82 +139,11 @@
                     </div>
                 </div>
             </div>
-            <div class="valentine-card">
-                <div class="valentine-receiver">
-                    <i class="fa-regular fa-user"></i>
-                    <p>Hubert Kubicki 3B</p>
-                </div>
-                <div class="valentine-card-right">
-                    <div class="valentine-info">
-                        <div class="valentine-date">Dzisiaj, 03:37</div>
-                        <div class="valentine-title">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </div>
-                    </div>
-                    <div class="valentine-type-info">
-                        <p class="v-type-text"><i class="fa-regular fa-keyboard"></i> Tekst</p>
-                        <p class="v-type-pixelart"></p>
-                        <p class="v-type-image"><i class="fa-regular fa-file"></i> Plik</p>
-                    </div>
-                </div>
-            </div>
-            <div class="valentine-card">
-                <div class="valentine-receiver">
-                    <i class="fa-regular fa-user"></i>
-                    <p>Hubert Kubicki 3B</p>
-                </div>
-                <div class="valentine-card-right">
-                    <div class="valentine-info">
-                        <div class="valentine-date">Wczoraj, 21:58</div>
-                        <div class="valentine-title">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </div>
-                    </div>
-                    <div class="valentine-type-info">
-                        <p class="v-type-text"><i class="fa-regular fa-keyboard"></i> Tekst</p>
-                        <p class="v-type-pixelart"></p>
-                        <p class="v-type-image"><i class="fa-regular fa-file"></i> Plik</p>
-                    </div>
-                </div>
-            </div>
-            <div class="valentine-card">
-                <div class="valentine-receiver">
-                    <i class="fa-regular fa-user"></i>
-                    <p>Hubert Kubicki 3B</p>
-                </div>
-                <div class="valentine-card-right">
-                    <div class="valentine-info">
-                        <div class="valentine-date">Przedwczoraj, 14:05</div>
-                        <div class="valentine-title">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </div>
-                    </div>
-                    <div class="valentine-type-info">
-                        <p class="v-type-text"><i class="fa-regular fa-keyboard"></i> Tekst</p>
-                        <p class="v-type-pixelart"></p>
-                        <p class="v-type-image"><i class="fa-regular fa-file"></i> Plik</p>
-                    </div>
-                </div>
-            </div>
-            <div class="valentine-card">
-                <div class="valentine-receiver">
-                    <i class="fa-regular fa-user"></i>
-                    <p>Hubert Kubicki 3B</p>
-                </div>
-                <div class="valentine-card-right">
-                    <div class="valentine-info">
-                        <div class="valentine-date">Przedwczoraj, 14:02</div>
-                        <div class="valentine-title">
-                            Lorem ipsum dolor sit amet consectetur.
-                        </div>
-                    </div>
-                    <div class="valentine-type-info">
-                        <p class="v-type-text"><i class="fa-regular fa-keyboard"></i> Tekst</p>
-                        <p class="v-type-pixelart"></p>
-                        <p class="v-type-image"><i class="fa-regular fa-file"></i> Plik</p>
-                    </div>
-                </div>
-            </div>
+
+        <?php
+            }
+            $db->close();
+        ?>
         </div>
         <div id="show-all-button-container">
             <a href="" class="secondary-button thicker-btn">Przeglądaj wszystkie</a>

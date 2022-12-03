@@ -28,8 +28,12 @@ async function uploadFile(e) {
 }
 
 async function onFormSubmitted() {
+    const submitBtn = document.querySelector('#submit-form');
+    submitBtn.style.backgroundColor = '#a5a5a5';
+    submitBtn.setAttribute('disabled', '');
     let pixelColors = [];
-    const vReceiver = document.querySelector('#receiver').value;
+    const vFirstName = document.querySelector('#firstName').value;
+    const vLastName = document.querySelector('#lastName').value;
     const vGrade = document.querySelector('#grade').value;
     const vTitle = document.querySelector('#title').value;
     const vContent = document.querySelector('#content').value;
@@ -43,35 +47,38 @@ async function onFormSubmitted() {
 
     const formData = new FormData();
     formData.append('pixelColors', JSON.stringify(pixelColors));
-    formData.append('receiver', vReceiver);
+    formData.append('firstName', vFirstName);
+    formData.append('lastName', vLastName);
     formData.append('grade', vGrade);
     formData.append('title', vTitle);
     formData.append('content', vContent);
-    formData.append('userImage', vImage);
+    if (vImage != null) {  
+        console.log("wtf");
+        formData.append('userImage', vImage);
+    }
     const inprogressCard = document.querySelector('.in-progress');
-    inprogressCard.style.display = 'flex';
+    inprogressCard.classList.add('state-card--active');
     let response = await fetch('valentine-post-create.php', {
         method: 'POST',
         body: formData
     });
-    await response.done(async function() {
-        setTimeout(() => {
-            location.href = 'index.php';
-        }, 1000);
-    })
     let data = await response.text();
     const failureCard = document.querySelector('.failure');
     const successCard = document.querySelector('.success');
-    if (data != "Success") {
+    if (data == "Failed") {
         console.log("FAILED");
-        inprogressCard.style.display = 'none';
-        failureCard.style.display = 'flex';
-
+        console.log(data);
+        inprogressCard.classList.remove('state-card--active');
+        failureCard.classList.add('state-card--active');
     } else {
         console.log("SUCCESS");
-        inprogressCard.style.display = 'none';
-        successCard.style.display = 'flex';
-    }
+        console.log(data);
+        inprogressCard.classList.remove('state-card--active');
+        successCard.classList.add('state-card--active');
+        setTimeout(() => {
+            location.href = 'index.php';
+        }, 2000);
+    } 
     return false;
 }
 

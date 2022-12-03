@@ -134,15 +134,15 @@
     color: var(--main-color);
     margin: 30px 0 5px 3%;
     padding-left: 20px;
-    font-size: 2.5vmin;
+    font-size: clamp(1.5rem, 2.5vmin, 4rem);
 }
 .text-section {
     margin: 0 3%;
-    padding: 0 0;
+    padding: 0;
 }
 
 .text-section-grid {
-    padding: 15px 0;
+    padding: 30px 0;
     border: 3px solid var(--main-color);
     border-radius: 25px;
     display: grid;
@@ -151,8 +151,6 @@
     justify-content: center;
     column-gap: 20px;
     row-gap: 30px;
-    /* grid-template-columns: repeat(3, 1fr); */
-    /* gap: 40px; */
 }
 
 .item1 {
@@ -161,18 +159,23 @@
 }
 
 .item2 {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.item3 {
     grid-column: 1 / span 3;
     grid-row: 2;
 }
 
-.item4 {
+.item3 {
     grid-column: 1 / span 3;
     grid-row: 3;
+}
+
+.item4 {
+    grid-column: 1 / span 3;
+    grid-row: 4;
+}
+
+.item5 {
+    grid-column: 3 / span 1;
+    grid-row: 1;
 }
 
 .input-container {
@@ -188,12 +191,12 @@
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 1rem;
     background-color: var(--bgcolor);
     margin: 6px 6px;
     padding: 3px 3px;
-    height: 20px;
+    /* height: 20px; */
     overflow: hidden;
+    font-size: clamp(.5rem, 4.1vmin, 2rem);
 }
 
 input[type="text"], textarea, select {
@@ -202,11 +205,17 @@ input[type="text"], textarea, select {
     padding: 10px 10px;
     background-color: var(--bgcolor);
     outline: none;
-    width: 50vmin;
+    width: 70vmin;
+    font-size: clamp(1rem, 5vmin, 2rem);
+    font-family: 'Lato', sans-serif;
+}
+
+:is(.item1, .item5) input {
+    width: 33vmin;
 }
 
 select {
-    width: 10vmin;
+    width: clamp(20vmin, 20vmin, 5em);
 }
 
 textarea {
@@ -240,7 +249,6 @@ textarea {
 .file-section {
     margin: 0 3%;
     padding: 2em 0;
-    width: 100%;
     display: grid;
     border: 3px solid var(--main-color);
     border-radius: 25px;

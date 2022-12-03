@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/creator-style.css">
+    <link rel="stylesheet" href="css/loading-screen.css">
     <script src="https://kit.fontawesome.com/5834cec5b8.js" crossorigin="anonymous"></script>
     <script src="js/submit-form.js"></script>
 </head>
 <body>
-    <!-- <div class="loading-screen-container">
+    <div class="loading-screen-container">
         <div class="zlota-logo-container">
             <img src="img/zlota-logo.png" alt="">
         </div>
@@ -22,9 +23,9 @@
                 <div class="loading-bar"></div>
             </div>
         </div>
-    </div> -->
+    </div>
     <div class="page-container">
-        <!-- <script src="js/loading-screen.js"></script> -->
+        <script src="js/loading-screen.js"></script>
         <header>
             <div id="header-left">
                 <img src="img/logo.png" alt="Logo aplikacji">
@@ -32,7 +33,9 @@
             </div>
             <div id="header-right">
                 <div id="home">
-                    <i class="menu-element fa-solid fa-house-chimney"></i>
+                    <a href="index.php" class="menu-element">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </a>
                     <img src="img/slash.png" alt="">
                 </div>
                 <nav>
@@ -51,14 +54,21 @@
                 </nav>
             </div>
         </header>
+        
         <p class="section-headline">1. Część tekstowa</p>
         <div class="text-section">
-            <form id="form">
+            <form id="form" method="POST" onsubmit="return false">
                 <div class="text-section-grid">
                     <div class="grid-item item1">
                         <label class="input-container">
-                            <input type="text" name="receiver" id="receiver" placeholder=" " required maxlength=60>
-                            <span class="input-label">Do kogo zaadresowana jest walentynka?</span>
+                            <input type="text" name="firstName" id="firstName" placeholder=" " required maxlength=60>
+                            <span class="input-label">Imię adresata</span>
+                        </label>
+                    </div>
+                    <div class="grid-item item5">
+                        <label class="input-container">
+                            <input type="text" name="lastName" id="lastName" placeholder=" " required maxlength=60>
+                            <span class="input-label">Nazwisko adresata</span>
                         </label>
                     </div>
                     <div class="grid-item item2">
@@ -141,7 +151,7 @@
         </div>
         <div class="form-controls-section">
             <div class="controls-left">
-                <button type="submit" class="btn-clear-pixels red">
+                <button type="submit" id="submit-form" class="btn-clear-pixels red">
                     <div class="btn-clear-pixels-left-circle">Wyślij walentynkę</div>
                     <div class="btn-clear-pixels-right-circle red-darker">
                         <i class="fa-regular fa-paper-plane"></i>
@@ -164,12 +174,12 @@
         <div class="state-card-left"><i class="fa-solid fa-check"></i></div>
         <div class="state-card-right">Walentynka została przesłana!</div>
     </div>
-    <!-- <div class="state-card in-progress">
-        <div class="state-card-left"><i class="fa-solid fa-spinner"></i></div>
+    <div class="state-card in-progress">
+        <div class="state-card-left"><div class="spinner"></div></div>
         <div class="state-card-right">Trwa przesyłanie walentynki...</div>
     </div>
     <div class="state-card failure">
         <div class="state-card-left"><i class="fa-solid fa-xmark"></i></div>
-        <div class="state-card-right">Wystąpił błąd, spróbuj ponownie później</div> -->
+        <div class="state-card-right">Wystąpił błąd, spróbuj ponownie później</div>
     </div>
 </body>

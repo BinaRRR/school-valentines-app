@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", e => {
 function colorChanged(e) {
     console.log(currentlyPickedColor);
     currentlyPickedColor = e.target.value;
-    
 }
 
 function clearCanvas() {

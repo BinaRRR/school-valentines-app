@@ -1,17 +1,18 @@
 <?php
 
 $pixelColors = json_decode($_POST['pixelColors']);
-$vReceiver = $_POST['receiver'];
+$vFirstName = $_POST['firstName'];
+$vLastName = $_POST['lastName'];
 $vGrade = $_POST['grade'];
 $vTitle = $_POST['title'];
 $vContent = $_POST['content'];
-$vReceiver = explode(' ', $vReceiver);
-$file = $_FILES['userImage']['name'];
+
+$isFileIncluded = isset($_FILES['userImage']);
 
 include_once('connection.php');
 
-$query = $db->prepare("INSERT INTO walentynki (title, firstName, lastName, class, message, creationDate) VALUES(?, ?, ?, ?, ?, CURDATE());");
-$query->bind_param('sssss', $vTitle, $vReceiver[0], $vReceiver[1], $vGrade, $vContent);
+$query = $db->prepare("INSERT INTO walentynki (title, firstName, lastName, class, message, creationDate, fileIncluded) VALUES(?, ?, ?, ?, ?, NOW(), ?);");
+$query->bind_param('sssssi', $vTitle, $vFirstName, $vLastName, $vGrade, $vContent, $isFileIncluded);
 $query->execute();
 
 $insertedRecordID = $db->insert_id;
@@ -26,11 +27,15 @@ foreach ($pixelColors as $tile) {
 }
 $db->close();
 
-$location = "user-images/u".$insertedRecordID.'_'.$file;
-if (move_uploaded_file($_FILES['userImage']['tmp_name'], $location)) {
-    echo "Success";
-} else {
-    echo "Failed";
+if ($isFileIncluded) {
+    $file = $_FILES['userImage']['name'];
+    $location = "user-images/u".$insertedRecordID.'_'.$file;
+    if (move_uploaded_file($_FILES['userImage']['tmp_name'], $location)) {
+        echo "Success";
+    } else {
+        echo "Failed";
+    }
+    return;
 }
-
-?>
+echo "Success";
+?> 
