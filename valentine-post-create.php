@@ -1,6 +1,10 @@
 <?php
-
-$pixelColors = json_decode($_POST['pixelColors']);
+if (isset($_POST['pixelColors'])) {
+    $pixelColors = json_decode($_POST['pixelColors']);
+    $isPixelartIncluded = true;
+} else {
+    $isPixelartIncluded = false;
+}
 $vFirstName = $_POST['firstName'];
 $vLastName = $_POST['lastName'];
 $vGrade = $_POST['grade'];
@@ -11,21 +15,23 @@ $isFileIncluded = isset($_FILES['userImage']);
 
 include_once('connection.php');
 
-$query = $db->prepare("INSERT INTO walentynki (title, firstName, lastName, class, message, creationDate, fileIncluded) VALUES(?, ?, ?, ?, ?, NOW(), ?);");
-$query->bind_param('sssssi', $vTitle, $vFirstName, $vLastName, $vGrade, $vContent, $isFileIncluded);
+$query = $db->prepare("INSERT INTO walentynki (title, firstName, lastName, class, message, creationDate, fileIncluded, pixelartIncluded) VALUES(?, ?, ?, ?, ?, NOW(), ?, ?);");
+$query->bind_param('sssssii', $vTitle, $vFirstName, $vLastName, $vGrade, $vContent, $isFileIncluded, $isPixelartIncluded);
 $query->execute();
 
 $insertedRecordID = $db->insert_id;
 
 unset($query);
 
-$query = $db->prepare("INSERT INTO pixels VALUES(null, ?, ?);");
-
-foreach ($pixelColors as $tile) {
-    $query->bind_param('is', $insertedRecordID, $tile);
-    $query->execute();
+if ($isPixelartIncluded) {
+    $query = $db->prepare("INSERT INTO pixels VALUES(null, ?, ?);");
+    
+    foreach ($pixelColors as $tile) {
+        $query->bind_param('is', $insertedRecordID, $tile);
+        $query->execute();
+    }
+    $db->close();
 }
-$db->close();
 
 if ($isFileIncluded) {
     $file = $_FILES['userImage']['name'];

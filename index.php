@@ -38,7 +38,7 @@
                         <i class="fa-solid fa-circle-plus"></i>
                         <p>Kreator walentynek</p>
                     </a>
-                    <a class="menu-element">
+                    <a class="menu-element" href="list.php">
                         <i class="fa-solid fa-rectangle-list"></i>
                         <p>Lista wysłanych</p>
                     </a>
@@ -146,7 +146,7 @@
         ?>
         </div>
         <div id="show-all-button-container">
-            <a href="" class="secondary-button thicker-btn">Przeglądaj wszystkie</a>
+            <a href="list.php" class="secondary-button thicker-btn">Przeglądaj wszystkie</a>
         </div>
     </div>
 </body>

@@ -74,23 +74,23 @@
                     <div class="grid-item item2">
                         <label class="input-container">
                             <select name="grade" id="grade" required >
-                                <option value="" disabled selected hidden>
-                                <option value="1A"></option>
-                                <option value="2A"></option>
-                                <option value="3A"></option>
-                                <option value="4A"></option>
-                                <option value="5A"></option>
-                                <option value="1B"></option>
-                                <option value="2B"></option>
+                            <option value="" disabled selected hidden>
+                                <option value="1A">1A</option>
+                                <option value="1B">1B</option>
+                                <option value="1C">1C</option>
+                                <option value="1D">1D</option>
+                                <option value="1E">1E</option>
+                                <option value="2A">2A</option>
+                                <option value="2B">2B</option>
+                                <option value="2C">2C</option>
+                                <option value="2D">2D</option>
+                                <option value="2E">2E</option>
+                                <option value="3A">3A</option>
                                 <option value="3B">3B</option>
-                                <option value="4B"></option>
-                                <option value="5B"></option>
-                                <option value="1C"></option>
-                                <option value="2C"></option>
-                                <option value="3C"></option>
-                                <option value="4C"></option>
-                                <option value="5C"></option>
-                                <option value="4E">4E</option>
+                                <option value="3C">3C</option>
+                                <option value="3D">3D</option>
+                                <option value="3E">3E</option>
+                                <option value="4A">4A</option>
                             </select>
                             <span class="input-label">Klasa</span>
                         </label>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
         </div>
-        <p class="section-headline">2. Kreator pixel artów</p>
+        <p class="section-headline">2. Kreator pixel artów <span class="optional-label">| Opcjonalne</span></p>
         <div class="pixelart-section">
             <div class="pixelart-top-bar">
                 <button type="button" class="btn-clear-pixels hide-on-resize">
@@ -141,12 +141,12 @@
             </div>
         </div>
 
-        <p class="section-headline">3. Przesyłanie pliku</p>
+        <p class="section-headline">3. Przesyłanie pliku <span class="optional-label">| Opcjonalne</span></p>
         <div class="file-section">
             <div class="file-drop-zone">
                 <p id="file-drop-zone-p">Przeciągnij i upuść plik, który chcesz dodać do walentynki</p>
             </div>
-            <p>...lub prześlij plik</p>
+            <p>...lub prześlij za pomocą przycisku</p>
                 <input type="file" id="fileUpload" accept="image/png, image/jpeg">
         </div>
         <div class="form-controls-section">

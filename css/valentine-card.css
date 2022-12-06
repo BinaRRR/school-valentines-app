@@ -106,3 +106,32 @@
 hr {
     color: grey;
 }
+
+.valentines-header {
+    background-color: var(--secondary-color);
+    width: 100%;
+    display: flex;
+    font-size: 4vmin;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 0;
+    text-align: center;
+    color: var(--bgcolor);
+    border-radius: 2em;
+}
+
+.valentines-header > * {
+    width: 33%;
+}
+
+.valentines-header > div:first-of-type {
+    
+}
+
+.valentines-header > div:nth-of-type(2) {
+    padding-left: 28%;
+}
+
+.valentines-header > div:nth-of-type(3) {
+ 
+}

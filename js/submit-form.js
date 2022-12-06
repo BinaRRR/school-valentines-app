@@ -46,7 +46,12 @@ async function onFormSubmitted() {
     console.log(pixelColors);
 
     const formData = new FormData();
-    formData.append('pixelColors', JSON.stringify(pixelColors));
+    const isTheSame = (value) => value == 'ffffff';
+    const isPixelartAttached = !pixelColors.every(isTheSame);
+    console.log(isPixelartAttached);
+    if (isPixelartAttached) {
+        formData.append('pixelColors', JSON.stringify(pixelColors));
+    }
     formData.append('firstName', vFirstName);
     formData.append('lastName', vLastName);
     formData.append('grade', vGrade);
