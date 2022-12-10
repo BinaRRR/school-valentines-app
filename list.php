@@ -172,7 +172,7 @@
 
         </div>
         <div class="footer-right">
-            <a href="htpps://github.com/BinaRRR" target="_blank">BinaR</a>
+            <a href="https://github.com/BinaRRR" target="_blank">BinaR</a>
         </div>
     </footer>
 </body>

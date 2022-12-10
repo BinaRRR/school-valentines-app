@@ -15,10 +15,44 @@
     height: auto;
     margin-top: 3vmin;
     display: flex;
+    position: relative;
     flex-direction: row;
     font-size: 3vmin;
-    border-radius: 0 15px 15px 0;
+    border-radius: 15px 15px 15px 15px;
+    overflow: hidden;
 }
+
+.valentine-card::before {
+    content: 'Otwórz';
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 50%;
+    left: var(--valentine-card-hover-pos);
+    border-radius: inherit;
+    transform: translate(0, -50%);
+    width: 15%;
+    height: 50%;
+    background-color: white;
+    opacity: 0.9;
+    transition: 600ms cubic-bezier(.71,-0.05,.38,1.02);
+}
+
+.valentine-card:hover::before {
+    left: 0;
+    cursor: pointer;
+    transition: 600ms cubic-bezier(.71,-0.05,.38,1.02);
+}
+
+/* .valentine-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(30% - 10px);
+    transform: translate(0, -50%);
+    height: 0;
+    width: 0;
+} */
 
 .valentine-card-right {
     display: flex;
@@ -124,14 +158,6 @@ hr {
     width: 33%;
 }
 
-.valentines-header > div:first-of-type {
-    
-}
-
 .valentines-header > div:nth-of-type(2) {
     padding-left: 28%;
-}
-
-.valentines-header > div:nth-of-type(3) {
- 
 }
