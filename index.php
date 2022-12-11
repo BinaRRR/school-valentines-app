@@ -113,10 +113,10 @@
         <div class="valentines-list">
 
         <?php
-            $results = $db->query("SELECT title, firstName, lastName, class, creationDate FROM walentynki ORDER BY creationDate DESC LIMIT 5;");
+            $results = $db->query("SELECT ID, title, firstName, lastName, class, creationDate FROM walentynki ORDER BY creationDate DESC LIMIT 5;");
             while ($row = $results->fetch_assoc()) {
         ?>
-            <div class="valentine-card featured">
+            <a href= <?php echo "'valentine.php?q=".$row['ID']."'"; ?> class="valentine-card featured">
                 <div class="valentine-receiver">
                     <i class="fa-regular fa-user"></i>
                     <p>
@@ -138,7 +138,7 @@
                         <p class="v-type-image"></p>
                     </div>
                 </div>
-            </div>
+            </a>
 
         <?php
             }

@@ -116,13 +116,13 @@
                     } else {
                         $pageNum = $_GET['p'];
                     }
-                    $results = $db->query("SELECT title, firstName, lastName, class, creationDate, fileIncluded, pixelartIncluded FROM walentynki ORDER BY creationDate DESC LIMIT 10 OFFSET ".($pageNum * 10).";");
+                    $results = $db->query("SELECT ID, title, firstName, lastName, class, creationDate, fileIncluded, pixelartIncluded FROM walentynki ORDER BY creationDate DESC LIMIT 10 OFFSET ".($pageNum * 10).";");
                     if ($results->num_rows == 0) {
                         header("Location: list.php?");
                     }
                     while ($row = $results->fetch_assoc()) {
                     ?>
-                    <div class="valentine-card featured">
+                    <a href=<?php echo "'valentine.php?q=".$row['ID']."'"; ?> class="valentine-card featured">
                         <div class="valentine-receiver">
                             <i class="fa-regular fa-user"></i>
                             <p>
@@ -144,7 +144,7 @@
                                 <p class="v-type-image"><?php echo($row['fileIncluded'] ? "<i class='fa-solid fa-file'></i> Plik" : ""); ?></p>
                             </div>
                         </div>
-                    </div>
+                    </a>
 
                 <?php
                     }

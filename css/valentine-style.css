@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+:root {
+    --envelope-color: rgb(195, 0, 0); 
+}
+
+.valentine-main-container {
+    width: 100%;
+    height: calc(100vh - 7.1vh);
+    display: grid;
+    place-items: center;
+}
+
+.envelope-container {
+    position: relative;
+    z-index: 1;
+    width: 80vmin;
+    aspect-ratio: 2.2;
+    display: grid;
+    place-items: center;
+    background-color:rgb(128, 0, 0);
+    box-shadow: 0 0 10px 0 black;
+}
+
+.envelope-triangle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: auto, 0;
+    width: 0;
+    height: 0;
+    /* background-color: green; */
+    /* border-top: 18vmin solid rgb(55, 255, 0); */
+    /* border: 0 0 10px 0 black; */
+}
+
+.triangle-bottom {
+    z-index: 2;
+    border-left: 40vmin solid transparent;
+    border-right: 40vmin solid transparent;
+    border-bottom: 18.17vmin solid var(--envelope-color);
+}
+
+.triangle-top {
+    border-left: 40vmin solid transparent;
+    border-right: 40vmin solid transparent;
+    border-top: 18.40vmin solid rgb(229, 2, 2);
+    top: 0;
+    opacity: 0;
+}
+
+.triangle-left {
+    border-left: 40vmin solid var(--envelope-color);
+    border-top: 18.5vmin solid transparent;
+    border-bottom: 18vmin solid transparent;
+}
+
+.triangle-right {
+    left: 100%;
+    transform: translate(-100%, 0);
+    border-right: 40vmin solid var(--envelope-color);
+    border-top: 18.5vmin solid transparent;
+    border-bottom: 18vmin solid transparent;
+}
+
+.letter {
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: 0;
+    width: 80%;
+    min-height: 50%;
+    background-color: var(--letter-bg-color);
+    border: 1px solid black;
+    /* box-shadow: 0 0 10px 0 black; */
+    aspect-ratio: 1.8;
+    padding: 1% 3%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 0.4fr 0.4fr 0.3fr;
+    grid-template-rows: 0.1fr 0.1fr 0.8fr;
+    /* overflow: hidden; */
+}
+
+.letter > p {
+    font-size: 3vmin;
+    font-family: 'Patrick Hand', cursive;
+}
+
+.vDate {
+    grid-column: 3;
+    text-align: right;
+}
+
+.vTitle {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.letter > .vContent {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+    font-size: 2.5vmin;
+}

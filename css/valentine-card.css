@@ -11,7 +11,6 @@
 }
 
 .valentine-card {
-    /* height: 10vmin; */
     height: auto;
     margin-top: 3vmin;
     display: flex;
@@ -29,18 +28,20 @@
     position: absolute;
     top: 50%;
     left: var(--valentine-card-hover-pos);
-    border-radius: inherit;
+    border-radius: 0 15px 15px 0;
     transform: translate(0, -50%);
     width: 15%;
     height: 50%;
     background-color: white;
     opacity: 0.9;
     transition: 600ms cubic-bezier(.71,-0.05,.38,1.02);
+    pointer-events: all;
 }
 
 .valentine-card:hover::before {
     left: 0;
     cursor: pointer;
+    pointer-events: all;
     transition: 600ms cubic-bezier(.71,-0.05,.38,1.02);
 }
 

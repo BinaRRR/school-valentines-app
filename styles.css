@@ -4,6 +4,7 @@
 @import url('css/state-cards.css');
 @import url('css/valentines-list.css');
 @import url('css/footer.css');
+@import url('css/valentine-style.css');
 
 :root {
     --bgcolor: #f3f3f3;
@@ -14,6 +15,7 @@
     --other-text-color: black;
     --card-bg-color: #333333;
     --valentine-card-hover-pos: -14%;
+    --letter-bg-color: #faebd7;
 }
 
 body {
@@ -60,7 +62,7 @@ header {
     background-color: var(--bgcolor);
     display: flex;
     justify-content: space-between;
-    /* max-height: 75px; */
+    height: 7vh;
     width: 100%;
     border-bottom: 1px solid black;
 }
