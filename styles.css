@@ -50,6 +50,10 @@ html {
     }
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     margin: 0;
     background-color: var(--bgcolor);

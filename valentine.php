@@ -22,7 +22,7 @@
     <script src="https://kit.fontawesome.com/5834cec5b8.js" crossorigin="anonymous"></script>
     <script src="js/envelope-animation.js"></script>
 </head>
-<body>
+<body class="preload">
     <!-- <div class="loading-screen-container">
         <div class="zlota-logo-container">
             <img src="img/zlota-logo.png" alt="">
@@ -36,7 +36,7 @@
     </div> -->
     <div class="page-container">
         <script src="js/loading-screen.js"></script>
-        <!-- <header>
+        <header>
             <div id="header-left">
                 <img src="img/logo.png" alt="Logo aplikacji">
                 <h3>Walentynki</h3>
@@ -61,21 +61,24 @@
                     </a>
                 </nav>
             </div>
-        </header> -->
+        </header>
         <div class="valentine-main-container">
             <div class="envelope-container"> 
                 <div class="envelope-triangle triangle-left"></div>
                 <div class="envelope-triangle triangle-right"></div>
                 <div class="envelope-triangle triangle-bottom"></div>
                 <div class="envelope-triangle triangle-top"></div>
+                <div class="letter-pixelart"></div>
                 <div class="letter">
                     <p class="vReceiver"><?php echo $row['firstName']." ".$row['lastName']; ?></p>
                     <p class="vDate"><?php echo $row['dateFormatted']; ?></p>
                     <p class="vTitle"><?php echo $row['title']; ?></p>
                     <p class="vContent"><?php echo $row['message']; ?></p>
                 </div>
+                <button type="button" class="envelope-seal">
+                    <img src="img/zlota-logo.png" class="seal-logo">
+                </button>
             </div>
-            <!-- <button type="button" id="open-envelope">Otwórz (test)</button> -->
         </div>
     </div>
 </body>

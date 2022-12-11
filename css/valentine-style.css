@@ -1,14 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 
 :root {
-    --envelope-color: rgb(195, 0, 0); 
+    --envelope-color: #d33333;
+    --envelope-inside-color: #a60707;
+    --envelope-lid-color: #e53636;
+    --overflow-hider-height: 100vh;
 }
 
 .valentine-main-container {
+    overflow: hidden;
     width: 100%;
     height: calc(100vh - 7.1vh);
     display: grid;
     place-items: center;
+}
+
+.scroll-enabled {
+    overflow: auto;
 }
 
 .envelope-container {
@@ -18,8 +26,42 @@
     aspect-ratio: 2.2;
     display: grid;
     place-items: center;
-    background-color:rgb(128, 0, 0);
+    background-color: var(--envelope-inside-color);
     box-shadow: 0 0 10px 0 black;
+}
+
+.envelope-container::after {
+    z-index: 5;
+    content: '';
+    position: absolute;
+    background-color: var(--bgcolor);
+    width: 100%;
+    height: var(--overflow-hider-height);
+    top: 100%;
+}
+
+.envelope-seal {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../img/envelope-seal.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 17vmin;
+    aspect-ratio: 1;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.seal-logo {
+    width: 30%;
+    height: 40%;
 }
 
 .envelope-triangle {
@@ -29,13 +71,10 @@
     margin: auto, 0;
     width: 0;
     height: 0;
-    /* background-color: green; */
-    /* border-top: 18vmin solid rgb(55, 255, 0); */
-    /* border: 0 0 10px 0 black; */
+    z-index: 3;
 }
 
 .triangle-bottom {
-    z-index: 2;
     border-left: 40vmin solid transparent;
     border-right: 40vmin solid transparent;
     border-bottom: 18.17vmin solid var(--envelope-color);
@@ -44,9 +83,28 @@
 .triangle-top {
     border-left: 40vmin solid transparent;
     border-right: 40vmin solid transparent;
-    border-top: 18.40vmin solid rgb(229, 2, 2);
+    border-top: 18.40vmin solid var(--envelope-lid-color);
     top: 0;
-    opacity: 0;
+    opacity: 1;
+    translate: 0 0;
+}
+
+.envelope-open {
+    transform: translate(0, 120%)!important;
+    transition: transform 1000ms;
+}
+
+.lid-open {
+    transform: translate(0, -100%) scale(1, -1);
+    transition: transform 1000ms;
+    z-index: 0!important;
+}
+
+.letter-slide-out {
+    translate: 0 -90%;
+    transition: translate 1000ms ease-in-out 1000ms,
+                z-index 0ms 1000ms;
+    z-index: 2!important;
 }
 
 .triangle-left {
@@ -63,23 +121,34 @@
     border-bottom: 18vmin solid transparent;
 }
 
+/* .letter-pixelart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    transform: translate(12.5%, 0);
+    min-height: 50%;
+    z-index: 2;
+    background-color: green;
+} */
+
 .letter {
     position: absolute;
     z-index: -1;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0%);
     top: 0;
     width: 80%;
     min-height: 50%;
+    max-height: 75vh;
+    overflow: auto;
     background-color: var(--letter-bg-color);
     border: 1px solid black;
-    /* box-shadow: 0 0 10px 0 black; */
-    aspect-ratio: 1.8;
     padding: 1% 3%;
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 0.4fr 0.4fr 0.3fr;
-    grid-template-rows: 0.1fr 0.1fr 0.8fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 0.1fr 0.1fr 0.8fr 0.1fr;
     /* overflow: hidden; */
 }
 
@@ -88,21 +157,24 @@
     font-family: 'Patrick Hand', cursive;
 }
 
+.vReceiver {
+    grid-column: 1 / span 2;
+}
+
 .vDate {
-    grid-column: 3;
+    grid-column: 4 / span 2;
     text-align: right;
 }
 
 .vTitle {
-    grid-column: 2;
+    grid-column: 2 / span 3;
     grid-row: 2;
     text-align: center;
     font-weight: bold;
-    
 }
 
 .letter > .vContent {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 5;
     grid-row: 3;
     font-size: 2.5vmin;
 }
