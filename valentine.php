@@ -47,7 +47,7 @@
                     <img src="img/slash.png" alt="">
                 </div>
                 <nav>
-                    <a class="menu-element" href="choose.php">
+                    <a class="menu-element" href="create.php">
                         <i class="fa-solid fa-circle-plus"></i>
                         <p>Kreator walentynek</p>
                     </a>

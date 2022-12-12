@@ -26,7 +26,7 @@
         <header>
             <div id="header-left">
                 <img src="img/logo.png" alt="Logo aplikacji">
-                <h3>Walentynki 2023</h3>
+                <h3>Walentynki</h3>
             </div>
             <div id="header-right">
                 <div id="home">
@@ -34,7 +34,7 @@
                     <img src="img/slash.png" alt="">
                 </div>
                 <nav>
-                    <a class="menu-element" href="choose.php">
+                    <a class="menu-element" href="create.php">
                         <i class="fa-solid fa-circle-plus"></i>
                         <p>Kreator walentynek</p>
                     </a>

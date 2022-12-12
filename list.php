@@ -27,7 +27,7 @@
         <header>
             <div id="header-left">
                 <img src="img/logo.png" alt="Logo aplikacji">
-                <h3>Walentynki 2023</h3>
+                <h3>Walentynki</h3>
             </div>
             <div id="header-right">
                 <div id="home">
@@ -97,7 +97,7 @@
                         <label class="input-container">
                             <select placeholder=" " required>
                                 <option value="" disabled selected hidden>
-                                <option value="za">xd</option>
+                                <option value="za"></option>
                             </select>
                             <span class="input-label">Sortuj</span>
                         </label>
@@ -116,9 +116,9 @@
                     } else {
                         $pageNum = $_GET['p'];
                     }
-                    $results = $db->query("SELECT ID, title, firstName, lastName, class, creationDate, fileIncluded, pixelartIncluded FROM walentynki ORDER BY creationDate DESC LIMIT 10 OFFSET ".($pageNum * 10).";");
+                    $results = $db->query("SELECT ID, title, firstName, lastName, class, DATE_FORMAT(creationDate, '%d-%c-%Y %T') AS dateFormatted, fileIncluded, pixelartIncluded FROM walentynki ORDER BY creationDate DESC LIMIT 10 OFFSET ".($pageNum * 10).";");
                     if ($results->num_rows == 0) {
-                        header("Location: list.php?");
+                        header("Location: list.php");
                     }
                     while ($row = $results->fetch_assoc()) {
                     ?>
@@ -132,7 +132,7 @@
                         <div class="valentine-card-right">
                             <div class="valentine-info">
                                 <div class="valentine-date">
-                                    <?php echo $row['creationDate']; ?>
+                                    <?php echo $row['dateFormatted']; ?>
                                 </div>
                                 <div class="valentine-title">
                                     <?php echo $row['title']; ?>
