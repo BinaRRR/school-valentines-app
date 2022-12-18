@@ -31,6 +31,7 @@
             </div>
             <div id="header-right">
                 <div id="home">
+                    <a href="index.php"></a>
                     <i class="menu-element fa-solid fa-house-chimney"></i>
                     <img src="img/slash.png" alt="">
                 </div>

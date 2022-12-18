@@ -7,7 +7,6 @@
     if (!($row = $results->fetch_assoc())) {
         header("Location: list.php");
     }
-    $db->close();
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +68,7 @@
                 <div class="envelope-triangle triangle-bottom"></div>
                 <div class="envelope-triangle triangle-top"></div>
                 <div class="letter-pixelart"></div>
-                <div class="letter">
+                <div class="letter letter-text">
                     <p class="vReceiver"><?php echo $row['firstName']." ".$row['lastName']; ?></p>
                     <p class="vDate"><?php echo $row['dateFormatted']; ?></p>
                     <p class="vTitle"><?php echo $row['title']; ?></p>
@@ -78,6 +77,23 @@
                 <button type="button" class="envelope-seal">
                     <img src="img/zlota-logo.png" class="seal-logo">
                 </button>
+            </div>
+            <div class="pixelart-grid pixelart-show">
+                <?php
+                    $results = $db->query("SELECT 1 FROM walentynki WHERE ID=".$vID." AND pixelartIncluded=1;");
+                    if ($results->num_rows <= 0) {
+                        return;
+                        $db->close();
+                    }
+                    $results = $db->query("SELECT pixelColor FROM pixels WHERE valentineID=".$vID.";");
+                    while ($row = $results->fetch_assoc()) {
+                        ?>
+                            <div class="tile no-border" style="background-color: #<?php echo $row['pixelColor']; ?>;"></div>
+                            <?php
+                    }
+                    $db->close();
+                    ?>
+                    <p class="wip-info">Podgląd, work in progress</p>
             </div>
         </div>
     </div>
