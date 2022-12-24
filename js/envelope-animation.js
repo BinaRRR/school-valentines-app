@@ -1,14 +1,14 @@
-var mainContainer, envelope, letter, lid, seal, pixelart, wipInfoParagraph, currentLetter, lastLetter;
+var mainContainer, envelope, letters, lid, seal, pixelart, currentLetter, lastLetter;
 
 document.addEventListener("DOMContentLoaded", e => {
     currentLetter = 0;
     // lastLetter = 
     envelope = document.querySelector('.envelope-container');
-    letter = document.querySelector('.letter');
+    letters = document.querySelectorAll('.letter');
     lid = document.querySelector('.triangle-top');
     mainContainer = document.querySelector('.valentine-main-container');
-    pixelart = document.querySelector('.pixelart-grid');
-    wipInfoParagraph = document.querySelector('.wip-info');
+    // pixelart = document.querySelector('.pixelart-grid');
+    lastLetter = letters.length;
     // letter.style.transform = "translate(-50%, -30%)";
     envelope.style.transform = "translate(0, 50%)";
     
@@ -18,14 +18,17 @@ document.addEventListener("DOMContentLoaded", e => {
 });
 
 function sealClicked() {
-    seal.removeEventListener('click', sealClicked);
-    letter.classList.toggle('letter-slide-out');
-    lid.classList.toggle('lid-open');
-    envelope.classList.toggle('envelope-open');
-    setTimeout(() => {
-        mainContainer.classList.toggle('scroll-enabled');
-        envelope.style.setProperty('--overflow-hider-height', '0');
-        pixelart.style.opacity = 1;
-        wipInfoParagraph.style.opacity = 1;
-    }, 2000);
+    if (lastLetter <= currentLetter) {
+        seal.removeEventListener('click', sealClicked);
+        setTimeout(() => {
+            mainContainer.classList.toggle('scroll-enabled');
+            envelope.style.setProperty('--overflow-hider-height', '0');
+        }, 2000);
+    }
+    if (currentLetter <= 0) {
+        lid.classList.toggle('lid-open');
+        envelope.classList.toggle('envelope-open');
+    }
+    letters[currentLetter].classList.toggle('letter-slide-out');
+    currentLetter++;
 }

@@ -45,7 +45,7 @@
     position: absolute;
     display: grid;
     place-items: center;
-    z-index: 4;
+    z-index: 9;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -72,7 +72,7 @@
     margin: auto, 0;
     width: 0;
     height: 0;
-    z-index: 3;
+    z-index: 8;
 }
 
 .triangle-bottom {
@@ -122,20 +122,10 @@
     border-bottom: 18vmin solid transparent;
 }
 
-/* .letter-pixelart {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 80%;
-    transform: translate(12.5%, 0);
-    min-height: 50%;
-    z-index: 2;
-    background-color: green;
-} */
 
 .letter {
     position: absolute;
-    z-index: -1;
+    z-index: -2;
     left: 50%;
     transform: translate(-50%, 0%);
     top: 0;
@@ -150,6 +140,26 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 0.1fr 0.1fr 0.8fr 0.1fr;
+    border-image-slice: 42 42 42 42;
+    border-image-width: 42px 42px 42px 42px;
+    border-image-outset: 5px 5px 5px 5px;
+    border-image-repeat: round round;
+    border-image-source: url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-6.svg");
+    border-style: solid;
+}
+
+.letter-pixelart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3vmin;
+    padding-bottom: 3vmin;
+    background-color: rgb(253, 233, 178);
+    z-index: -3;
+}
+.letter-file {
+    z-index: -4;
 }
 
 .letter > p {
@@ -185,4 +195,9 @@
     position: absolute;
     top: 10%;
     right: 3%;
+}
+
+#valentine-image {
+    width: 90%;
+    aspect-ratio: 1;
 }
