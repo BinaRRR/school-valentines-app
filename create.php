@@ -184,3 +184,4 @@
         <div class="state-card-right">Wystąpił błąd, spróbuj ponownie później</div>
     </div>
 </body>
+<?php ?>
