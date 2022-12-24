@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/creator-style.css">
     <link rel="stylesheet" href="css/loading-screen.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="https://kit.fontawesome.com/5834cec5b8.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -30,17 +31,18 @@
                 <h3>Walentynki</h3>
             </div>
             <div id="header-right">
-                <div id="home">
-                    <a href="index.php"></a>
-                    <i class="menu-element fa-solid fa-house-chimney"></i>
+            <div id="home">
+                    <a href="index.php" class="menu-element">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </a>
                     <img src="img/slash.png" alt="">
                 </div>
                 <nav>
-                    <a class="menu-element" href="choose.php">
+                    <a class="menu-element" href="create.php">
                         <i class="fa-solid fa-circle-plus"></i>
                         <p>Kreator walentynek</p>
                     </a>
-                    <a class="menu-element">
+                    <a class="menu-element" href="list.php">
                         <i class="fa-solid fa-rectangle-list"></i>
                         <p>Lista wysłanych</p>
                     </a>

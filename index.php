@@ -7,6 +7,7 @@
     <title>Złota szkoła | Walentynki</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/loading-screen.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="https://kit.fontawesome.com/5834cec5b8.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -29,8 +30,10 @@
                 <h3>Walentynki</h3>
             </div>
             <div id="header-right">
-                <div id="home">
-                    <i class="menu-element fa-solid fa-house-chimney"></i>
+            <div id="home">
+                    <a href="index.php" class="menu-element">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </a>
                     <img src="img/slash.png" alt="">
                 </div>
                 <nav>
@@ -58,7 +61,7 @@
             </div>
 
             <div class="main-buttons">
-                <a class="primary-button" href="choose.php">Stwórz swoją anonimową walentynkę</a>
+                <a class="primary-button" href="create.php">Stwórz swoją anonimową walentynkę</a>
                 <a class="secondary-button" href="#valentines-category-title">Przejrzyj wysłane walentynki</a>
             </div>
 
