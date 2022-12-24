@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/creator-style.css">
     <link rel="stylesheet" href="css/loading-screen.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <script src="https://kit.fontawesome.com/5834cec5b8.js" crossorigin="anonymous"></script>
     <script src="js/submit-form.js"></script>
 </head>
@@ -39,7 +40,7 @@
                     <img src="img/slash.png" alt="">
                 </div>
                 <nav>
-                    <a class="menu-element">
+                    <a class="menu-element" href="create.php">
                         <i class="fa-solid fa-circle-plus"></i>
                         <p>Kreator walentynek</p>
                     </a>
@@ -160,9 +161,9 @@
                 <p>Anonimowo wysyła walentynkę w świat. Będzie ona dostępna dla każdego, bez Twojego śladu.</p>
             </div>
             <div class="controls-right">
-            <button type="reset" class="btn-clear-pixels">
+            <button type="reset" class="btn-clear-pixels btn-smaller">
                     <div class="btn-clear-pixels-left-circle">Zresetuj formularz</div>
-                    <div class="btn-clear-pixels-right-circle">
+                    <div class="btn-clear-pixels-right-circle btn-smaller-right-circle">
                         <i class="fa-solid fa-delete-left"></i>
                     </div>
             </button>

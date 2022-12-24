@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poiret+One&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 @media only screen and (max-width: 900px) {
     .main-chooser {
         flex-direction: column !important;
@@ -123,16 +127,21 @@
     width: 100vw;
     margin: 0 auto;
     position: relative;
+    background-color: #ffffff;
 }
 
 .pixelart-show {
-    position: absolute;
-    top: 0;
-    right: 0;
     width: 40vmin;
     aspect-ratio: 1;
-    opacity: 0;
+    /* opacity: 0; */
     transition: opacity 1000ms;
+    border-image-slice: 42 42 42 42;
+    border-image-width: 42px 42px 42px 42px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: round round;
+    border-image-source: url("https://mdn.github.io/css-examples/tools/border-image-generator/border-image-6.svg");
+    border-style: solid;
+    box-sizing: border-box;
 }
 
 .tile {
@@ -143,6 +152,7 @@
 
 .no-border {
     border: none;
+    outline: none;
 }
 
 .section-headline {
@@ -272,7 +282,9 @@ textarea {
     border-radius: 25px;
     place-items: center;
     row-gap: 15px;
+    font-size: 2vmin;
 }
+
 
 .file-drop-zone {
     padding: 1em 0;
@@ -287,7 +299,17 @@ textarea {
     background-repeat: no-repeat;
 }
 
+#file-drop-zone-p {
+    margin: 0;
+}
+
+#fileUpload {
+    font-size: 2vmin;
+    text-align: center;
+}
+
 .form-controls-section {
+    box-sizing: border-box;
     margin: 30px 3%;
     display: flex;
     flex-direction: row;
@@ -308,10 +330,14 @@ textarea {
 
 .controls-right {
     border-left: 2px solid black;
+    width: 25%;
+    padding-left: 3vmin;
 }
 
 .controls-left {
     border-right: 2px solid transparent;
+    box-sizing: border-box;
+    width: 75%;
 }
 
 .optional-label  {
