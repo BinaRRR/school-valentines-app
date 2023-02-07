@@ -120,9 +120,6 @@
                         $pageNum = $_GET['p'];
                     }
                     $results = $db->query("SELECT ID, title, firstName, lastName, class, DATE_FORMAT(creationDate, '%d-%c-%Y %T') AS dateFormatted, fileIncluded, pixelartIncluded FROM walentynki ORDER BY creationDate DESC LIMIT 10 OFFSET ".($pageNum * 10).";");
-                    if ($results->num_rows == 0) {
-                        header("Location: list.php");
-                    }
                     while ($row = $results->fetch_assoc()) {
                     ?>
                     <a href=<?php echo "'valentine.php?q=".$row['ID']."'"; ?> class="valentine-card featured">
@@ -158,10 +155,11 @@
                 <div class="main-list--pages">
                     <?php 
                     if ($pageNum != 0) {
-
-                    echo "<a href='list.php?p=".($pageNum-1)."' class='page-change' id='previous'>< &nbsp;Poprzednia</a>";
+                        echo "<a href='list.php?p=".($pageNum-1)."' class='page-change' id='previous'>< &nbsp;Poprzednia</a>";
                     }
-                    echo "<a href='list.php?p=".($pageNum+1)."' class='page-change' id='next'>Następna &nbsp;></a>";
+                    if ($results->num_rows >= 10) {
+                        echo "<a href='list.php?p=".($pageNum+1)."' class='page-change' id='next'>Następna &nbsp;></a>";
+                    }
                     ?>
                     </div>
             </div>

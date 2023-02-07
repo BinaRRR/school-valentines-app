@@ -91,18 +91,22 @@
     (SELECT COUNT(ID) FROM walentynki WHERE DATE(creationDate)=DATE(NOW())) AS todaysValentines
     FROM
     walentynki");
+    $no_records = false;
+    if ($results->num_rows == 0) {
+        $no_records = true;
+    }
     $row = mysqli_fetch_row($results);
 ?>
             <div class="main-stats">
                 <div class="stats-left">
                     <p>
-                        <?php echo $row[1] ?>
+                        <?php echo($no_records ? 0 : $row[1]) ?>
                     </p>
                     <p>wyznań miłosnych dzisiaj</p>
                 </div>
                 <div class="stats-right">
                     <p>
-                        <?php echo $row[0] ?>
+                        <?php echo($no_records ? 0 : $row[1]) ?>
                     </p>
                     <p>poprawionych humorów ogółem</p>
                 </div>
