@@ -69,7 +69,7 @@
                     <div class="grid-item item5">
                         <label class="input-container">
                             <input type="text" name="lastName" id="lastName" placeholder=" " required maxlength=60>
-                            <span class="input-label">Nazwisko adresata</span>
+                            <span class="input-label">Nazwisko</span>
                         </label>
                     </div>
                     <div class="grid-item item2">
@@ -81,17 +81,28 @@
                                 <option value="1C">1C</option>
                                 <option value="1D">1D</option>
                                 <option value="1E">1E</option>
+                                <option value="1F">1F</option>
+                                <option value="1G">1G</option>
                                 <option value="2A">2A</option>
                                 <option value="2B">2B</option>
                                 <option value="2C">2C</option>
                                 <option value="2D">2D</option>
                                 <option value="2E">2E</option>
+                                <option value="2F">2F</option>
                                 <option value="3A">3A</option>
                                 <option value="3B">3B</option>
                                 <option value="3C">3C</option>
                                 <option value="3D">3D</option>
                                 <option value="3E">3E</option>
                                 <option value="4A">4A</option>
+                                <option value="4B">4B</option>
+                                <option value="4C">4C</option>
+                                <option value="4D">4D</option>
+                                <option value="4E">4E</option>
+                                <option value="4F">4F</option>
+                                <option value="4G">4G</option>
+                                <option value="4H">4H</option>
+
                             </select>
                             <span class="input-label">Klasa</span>
                         </label>
@@ -116,7 +127,7 @@
                 <button type="button" class="btn-clear-pixels hide-on-resize">
                     <div class="btn-clear-pixels-left-circle hide-on-resize">Wyczyść piksele</div>
                     <div class="btn-clear-pixels-right-circle hide-on-resize">
-                        <i class="fa-solid fa-eraser"></i>
+                    <i class="fa-solid fa-trash-can"></i>
                     </div>
                 </button>
                 <div class="pixelart-top-bar-right">
@@ -145,9 +156,10 @@
         <p class="section-headline">3. Przesyłanie pliku <span class="optional-label">| Opcjonalne</span></p>
         <div class="file-section">
             <div class="file-drop-zone">
-                <p id="file-drop-zone-p">Przeciągnij i upuść plik, który chcesz dodać do walentynki</p>
+                <p id="file-drop-zone-disclaimer">UWAGA! Obowiązuje zakaz przesyłania zdjęć z wizerunkami osób prywatnych</p>
+                <p id="file-drop-zone-p"></p>
             </div>
-            <p>...lub prześlij za pomocą przycisku</p>
+            <!-- <p>...lub prześlij za pomocą przycisku</p> -->
                 <input type="file" id="fileUpload" accept="image/png, image/jpeg">
         </div>
         <div class="form-controls-section">
@@ -159,6 +171,7 @@
                     </div>
                 </button>
                 <p>Anonimowo wysyła walentynkę w świat. Będzie ona dostępna dla każdego, bez Twojego śladu.</p>
+                <p>Uwaga! Walentynka zostanie zweryfikowana i wyświetlona w ciągu 6 godzin</p>
             </div>
             <div class="controls-right">
             <button type="reset" class="btn-clear-pixels btn-smaller">
