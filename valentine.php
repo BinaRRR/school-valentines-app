@@ -1,12 +1,24 @@
 <?php
-    if(isset($_GET['q']))
-    $vID = $_GET['q'];
-
-    include_once("connection.php");
-    $results = $db->query("SELECT *, DATE_FORMAT(creationDate, '%d-%c-%Y %T') AS dateFormatted FROM walentynki WHERE ID=".$vID.";");
-    if (!($row = $results->fetch_assoc())) {
+    session_start();
+    if (!isset($_GET['q'])) {
         header("Location: list.php");
     }
+    $vID = $_GET['q'];
+    include_once("connection.php");
+    if ($_SESSION['admin'] == false) {
+        $query_string = sprintf("SELECT ID FROM walentynki WHERE ID=%d AND verified=1;", $vID);
+        $results = $db->query($query_string);
+        if ($results->num_rows <= 0) {
+            $db->close();
+            header("Location: list.php");
+        }
+    }
+    $results = $db->query("SELECT *, DATE_FORMAT(creationDate, '%d-%c-%Y %T') AS dateFormatted FROM walentynki WHERE ID=".$vID.";");
+    if ($results->num_rows <= 0) {
+        $db->close();
+        header("Location: list.php");
+    }
+    $row = $results->fetch_assoc();
 ?>
 
 <!DOCTYPE html>
@@ -104,6 +116,7 @@
                     echo "<img id='valentine-image' src='user-images/".$fileName[0]."'>";
                     echo "</div>";
                 }
+                $db->close();
                 ?>
                 <button type="button" class="envelope-seal">
                     <img src="img/zlota-logo.png" class="seal-logo">
