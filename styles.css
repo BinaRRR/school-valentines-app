@@ -6,6 +6,7 @@
 @import url('css/valentines-list.css');
 @import url('css/footer.css');
 @import url('css/valentine-style.css');
+@import url('css/notifications-bar.css');
 
 :root {
     --bgcolor: #f3f3f3;
@@ -37,6 +38,9 @@ html {
     nav > a {
         font-size: 1.5rem !important;
     }
+    #home > a {
+        font-size: 1.5rem !important;
+    }
 }
 
 @media only screen and (max-width: 500px) {
@@ -47,7 +51,7 @@ html {
         width: 70%;
     }
     nav > a {
-        font-size: 1rem !important;
+        padding: 0 5px!important;
     }
 }
 
@@ -270,4 +274,10 @@ nav {
     font-family: 'Lato', sans-serif;
     margin-bottom: 100px;
     font-size: 2.6vmin;
+}
+
+table, tr, td {
+    padding: .5em;
+    border-collapse: collapse;
+    border: 1px solid black;
 }
