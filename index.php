@@ -24,6 +24,7 @@
     </div>
     <div class="page-container">
         <script src="js/loading-screen.js"></script>
+        <?php include_once('notifications-bar.php')?>
         <header>
             <div id="header-left">
                 <img src="img/logo.png" alt="Logo aplikacji">
@@ -87,8 +88,8 @@
     // pixelColor char(6));");
 
     $results = mysqli_query($db, "SELECT 
-    (SELECT COUNT(ID) FROM walentynki) AS allValentines,
-    (SELECT COUNT(ID) FROM walentynki WHERE DATE(creationDate)=DATE(NOW())) AS todaysValentines
+    (SELECT COUNT(ID) FROM walentynki WHERE verified=1) AS allValentines,
+    (SELECT COUNT(ID) FROM walentynki WHERE verified=1 AND DATE(creationDate)=DATE(NOW())) AS todaysValentines
     FROM
     walentynki");
     $no_records = false;
@@ -106,7 +107,7 @@
                 </div>
                 <div class="stats-right">
                     <p>
-                        <?php echo($no_records ? 0 : $row[1]) ?>
+                        <?php echo($no_records ? 0 : $row[0]) ?>
                     </p>
                     <p>poprawionych humorów ogółem</p>
                 </div>
@@ -120,7 +121,10 @@
         <div class="valentines-list">
 
         <?php
-            $results = $db->query("SELECT ID, title, firstName, lastName, class, creationDate FROM walentynki ORDER BY creationDate DESC LIMIT 5;");
+            $results = $db->query("SELECT ID, title, firstName, lastName, class, creationDate, fileIncluded, pixelartIncluded FROM walentynki WHERE verified=1 ORDER BY creationDate DESC LIMIT 5;");
+            if ($results->num_rows <= 0) {
+                echo "<p class='no-valentines-black'>Nie ma jeszcze żadnych walentynek!</p>";
+            }
             while ($row = $results->fetch_assoc()) {
         ?>
             <a href= <?php echo "'valentine.php?q=".$row['ID']."'"; ?> class="valentine-card featured">
@@ -141,8 +145,8 @@
                     </div>
                     <div class="valentine-type-info">
                         <p class="v-type-text"><i class="fa-regular fa-keyboard"></i> Tekst</p>
-                        <p class="v-type-pixelart"><i class="fa-solid fa-paint-roller"></i> Pixel art</p>
-                        <p class="v-type-image"></p>
+                        <p class="v-type-pixelart"><?php echo($row['pixelartIncluded'] ? "<i class='fa-solid fa-paint-roller'></i> Pixelart" : ""); ?></p>
+                        <p class="v-type-image"><?php echo($row['fileIncluded'] ? "<i class='fa-solid fa-file'></i> Plik" : ""); ?></p>
                     </div>
                 </div>
             </a>

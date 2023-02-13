@@ -1,0 +1,30 @@
+.notifications-bar {
+    background-color:#0a81bc;
+}
+
+.notification {
+    padding: .5em 2vmin;
+    color: var(--bgcolor);
+    text-align: center;
+    font-size: clamp(.3rem, 2vmin, .8rem);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5vmin;
+}
+
+.notification-info-icon {
+    font-size: clamp(1.5rem, 4.1vmin, 3rem);
+}
+
+.notification-close > button {
+    font-size: clamp(1.5rem, 4.1vmin, 2rem);
+    background: none;
+    outline: none;
+    border: none;
+    color: var(--bgcolor);
+}
+
+.notification-content {
+    width: 100%;
+}

@@ -25,6 +25,7 @@
     </div>
     <div class="page-container">
         <script src="js/loading-screen.js"></script>
+        <?php include_once('notifications-bar.php')?>
         <header>
             <div id="header-left">
                 <img src="img/logo.png" alt="Logo aplikacji">
@@ -62,39 +63,54 @@
             </div>
             <div class="main-list">
                 <div class="main-list--options">
-                    <div class="filter-options">
+                    <form class="filter-options" action="list.php">
                         <i class="fa-solid fa-filter"></i>
                         <label class="input-container">
-                            <input type="text" name="title" id="title" placeholder=" " required maxlength=60>
+                            <input type="text" name="n" id="title" placeholder=" " maxlength=60>
                             <span class="input-label">Imię</span>
                         </label>
                         <label class="input-container">
-                            <input type="text" name="title" id="title" placeholder=" " required maxlength=60>
+                            <input type="text" name="s" id="title" placeholder=" " maxlength=60>
                             <span class="input-label">Nazwisko</span>
                         </label>
                         <label class="input-container">
-                            <select name="grade" id="grade" required >
+                            <select name="g" id="grade">
                                 <option value="" disabled selected hidden>
                                 <option value="1A">1A</option>
                                 <option value="1B">1B</option>
                                 <option value="1C">1C</option>
                                 <option value="1D">1D</option>
                                 <option value="1E">1E</option>
+                                <option value="1F">1F</option>
+                                <option value="1G">1G</option>
                                 <option value="2A">2A</option>
                                 <option value="2B">2B</option>
                                 <option value="2C">2C</option>
                                 <option value="2D">2D</option>
                                 <option value="2E">2E</option>
+                                <option value="2F">2F</option>
                                 <option value="3A">3A</option>
                                 <option value="3B">3B</option>
                                 <option value="3C">3C</option>
                                 <option value="3D">3D</option>
                                 <option value="3E">3E</option>
                                 <option value="4A">4A</option>
+                                <option value="4B">4B</option>
+                                <option value="4C">4C</option>
+                                <option value="4D">4D</option>
+                                <option value="4E">4E</option>
+                                <option value="4F">4F</option>
+                                <option value="4G">4G</option>
+                                <option value="4H">4H</option>
                             </select>
                             <span class="input-label">Klasa</span>
                         </label>
-                    </div>
+                        <button type="submit" class="filter-button filter-submit">Filtruj</button>
+                        <?php 
+                        if (isset($_GET['n'])) { ?>
+                        <a href="./list.php" class="filter-button filter-remove">Usuń filtr</a>
+                        <?php } ?>
+                    </form>
                     <div class="sort-options">
                         <i class="fa-solid fa-arrow-up-wide-short"></i>
                         <label class="input-container">
@@ -119,7 +135,17 @@
                     } else {
                         $pageNum = $_GET['p'];
                     }
-                    $results = $db->query("SELECT ID, title, firstName, lastName, class, DATE_FORMAT(creationDate, '%d-%c-%Y %T') AS dateFormatted, fileIncluded, pixelartIncluded FROM walentynki ORDER BY creationDate DESC LIMIT 10 OFFSET ".($pageNum * 10).";");
+                    if (isset($_GET['n'])) {
+                        $firstName = $_GET['n'];
+                        $lastName = $_GET['s'];
+                        $grade = $_GET['g'];
+                        $results = $db->query("SELECT ID, title, firstName, lastName, class, DATE_FORMAT(creationDate, '%d-%c-%Y %T') AS dateFormatted, fileIncluded, pixelartIncluded FROM walentynki WHERE verified=1 AND firstName LIKE '".($firstName."%")."' AND lastName LIKE '".($lastName."%")."' AND class LIKE '".("%".$grade)."' ORDER BY creationDate DESC;");
+                    }
+                    else 
+                        $results = $db->query("SELECT ID, title, firstName, lastName, class, DATE_FORMAT(creationDate, '%d-%c-%Y %T') AS dateFormatted, fileIncluded, pixelartIncluded FROM walentynki WHERE verified=1 ORDER BY creationDate DESC LIMIT 10 OFFSET ".($pageNum * 10).";");
+                    if ($results->num_rows <= 0) {
+                        echo "<p class='no-valentines-white'>Nie ma jeszcze żadnych walentynek!</p>";
+                    }
                     while ($row = $results->fetch_assoc()) {
                     ?>
                     <a href=<?php echo "'valentine.php?q=".$row['ID']."'"; ?> class="valentine-card featured">
@@ -153,27 +179,18 @@
                     
                 </div>
                 <div class="main-list--pages">
-                    <?php 
-                    if ($pageNum != 0) {
-                        echo "<a href='list.php?p=".($pageNum-1)."' class='page-change' id='previous'>< &nbsp;Poprzednia</a>";
+                    <?php
+                    if (!isset($_GET['n'])) {
+                        if ($pageNum != 0) {
+                            echo "<a href='list.php?p=".($pageNum-1)."' class='page-change' id='previous'>< &nbsp;Poprzednia</a>";
+                        }
+                        if ($results->num_rows >= 10) {
+                            echo "<a href='list.php?p=".($pageNum+1)."' class='page-change' id='next'>Następna &nbsp;></a>";
+                        }
                     }
-                    if ($results->num_rows >= 10) {
-                        echo "<a href='list.php?p=".($pageNum+1)."' class='page-change' id='next'>Następna &nbsp;></a>";
-                    }
-                    ?>
+                        ?>
                     </div>
             </div>
         </div>
     </div>
-    <footer>
-        <div class="footer-left">
-
-        </div>
-        <div class="footer-middle">
-
-        </div>
-        <div class="footer-right">
-            <a href="https://github.com/BinaRRR" target="_blank">BinaR</a>
-        </div>
-    </footer>
 </body>

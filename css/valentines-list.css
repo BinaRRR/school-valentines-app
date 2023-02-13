@@ -2,7 +2,7 @@
     border-bottom: .3vmin dashed var(--main-color);
     padding: 1em 0;
     display: flex;
-    display: none;
+    /* display: none; */
     gap: 1em;
     flex-direction: row;
     justify-content: center;
@@ -19,6 +19,29 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+}
+
+.sort-options {
+    display: none;
+}
+
+.filter-button {
+    border-radius: .5em;
+    background: var(--main-color);
+    outline: none;
+    border: none;
+    color: var(--bgcolor);
+    padding: .55em 1em;
+    font-size: clamp(.5rem, 4.1vmin, 2rem);
+}
+
+.filter-remove {
+    background-color: var(--secondary-color);
+}
+
+.filter-submit:hover {
+    background-color: var(--main-color-darker);
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 800px) {
@@ -72,15 +95,27 @@
     letter-spacing: .2em;
 }
 
-.main-list--pages > a:first-child {
+/* .main-list--pages > a:first-child {
     border-right: 1px solid white;
 }
 
 .main-list--pages > a:last-child {
     border-left: 1px solid white;
-}
+} */
 
 .main-list--pages > a:hover{
     color: var(--secondary-color);
     transition: color 350ms;
+}
+
+.no-valentines-white {
+    color: var(--bgcolor);
+    font-size: 4vmin;
+    text-align: center;
+}
+
+.no-valentines-black {
+    color: black;
+    font-size: 4vmin;
+    text-align: center;
 }
